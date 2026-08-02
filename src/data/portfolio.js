@@ -1,0 +1,82 @@
+export const portfolio = {
+  name: 'Alex Silva',
+  role: 'Designer & Desenvolvedor Front-end',
+  location: 'São Paulo, Brasil',
+  email: 'ola@alexsilva.dev',
+  bio: 'Sou uma pessoa curiosa, apaixonada por criar interfaces que unem clareza, personalidade e código bem pensado. Gosto de transformar problemas complexos em produtos digitais simples de usar e gostosos de explorar.',
+  education: 'Design Digital — Bacharelado',
+  languages: ['Português nativo', 'Inglês avançado', 'Espanhol básico'],
+  socials: {
+    github: 'https://github.com/',
+    linkedin: 'https://www.linkedin.com/',
+  },
+  experience: [
+    {
+      period: '2023 — agora',
+      role: 'Product Designer Sênior',
+      company: 'Studio Aurora',
+      description: 'Liderança de projetos digitais, prototipação e evolução de sistemas de design para produtos usados por milhares de pessoas.',
+    },
+    {
+      period: '2021 — 2023',
+      role: 'Front-end Developer',
+      company: 'Nuvem Lab',
+      description: 'Desenvolvimento de experiências web responsivas com React, acessibilidade e colaboração próxima com design e produto.',
+    },
+    {
+      period: '2019 — 2021',
+      role: 'Designer Freelancer',
+      company: 'Projetos independentes',
+      description: 'Identidades visuais, sites e materiais digitais para pequenos negócios e profissionais criativos.',
+    },
+  ],
+  skills: [
+    { name: 'UI & Product Design', description: 'Figma, protótipos e sistemas de design.', level: 92 },
+    { name: 'Front-end', description: 'React, JavaScript, HTML e CSS.', level: 86 },
+    { name: 'Direção visual', description: 'Identidade, tipografia e composição.', level: 82 },
+    { name: 'Acessibilidade', description: 'Interfaces inclusivas e semânticas.', level: 78 },
+  ],
+}
+
+export const projects = [
+  {
+    id: 'aurora',
+    short: 'AU',
+    title: 'Aurora Banking',
+    description: 'Experiência de controle financeiro para pessoas que querem entender melhor sua rotina sem planilhas complicadas.',
+    year: '2025',
+    tags: ['Product Design', 'React'],
+    color: 'blue',
+    url: '#',
+  },
+  {
+    id: 'flora',
+    short: 'FL',
+    title: 'Flora App',
+    description: 'Aplicativo de cuidado com plantas que transforma lembretes em uma rotina simples, acolhedora e visual.',
+    year: '2024',
+    tags: ['UI Design', 'Mobile'],
+    color: 'green',
+    url: '#',
+  },
+  {
+    id: 'cosmos',
+    short: 'CO',
+    title: 'Cosmos Studio',
+    description: 'Portfólio editorial para um estúdio criativo, com foco em movimento, tipografia e narrativa de projetos.',
+    year: '2024',
+    tags: ['Web Design', 'Motion'],
+    color: 'violet',
+    url: '#',
+  },
+  {
+    id: 'radio',
+    short: 'RA',
+    title: 'Rádio Café',
+    description: 'Player experimental que combina playlists calmas, pequenos rituais e uma interface inspirada em aparelhos analógicos.',
+    year: '2023',
+    tags: ['Creative Code', 'Audio'],
+    color: 'orange',
+    url: '#',
+  },
+]
