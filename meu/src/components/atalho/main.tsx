@@ -5,8 +5,10 @@ type DescricaoNome = {
   nome: string;
 };
 
+
 export function Atalho({ nome }: DescricaoNome) {
   const [ativo, setAtivo] = useState(false);
+  const [janelaAberta, setJanelaAberta] = useState(false)
 
   function handleClick() {
     setAtivo((estadoAtual) => !estadoAtual);
@@ -17,9 +19,11 @@ export function Atalho({ nome }: DescricaoNome) {
       <button
         className={ativo ? styles.circleIcon : styles.icon}
         onClick={handleClick}
+
       />
+      <p>{nome}</p>
     </div>
-    <h3>{nome}</h3>
+
   </>
 
   );
