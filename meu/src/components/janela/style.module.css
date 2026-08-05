@@ -1,0 +1,13 @@
+.stage {
+  position: fixed;
+  top: 100px;
+  left: 300px;
+
+  width: 20rem;
+  height: 20rem;
+  margin: 0;
+  border-radius: 1.5%;
+
+  background-color: cadetblue;
+  z-index: 1000;
+}
