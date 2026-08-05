@@ -3,8 +3,21 @@
   width: 20rem;
   height: 20rem;
   margin: 0;
+  overflow: hidden;
 
   background-color: cadetblue;
   border-radius: 10%;
   z-index: 1000;
+}
+
+.titleBar {
+  padding: 0.75rem 1rem;
+  color: white;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.titleBar:active {
+  cursor: grabbing;
 }
