@@ -2,32 +2,29 @@ import { useState } from "react";
 import styles from "./style.module.css";
 import { Janela } from "../janela/main";
 
-type DescricaoNome = {
+type AtalhoProps = {
   nome: string;
+  top: number;
+  left: number;
 };
 
-
-export function Atalho({ nome }: DescricaoNome) {
+export function Atalho({ nome, top, left }: AtalhoProps) {
   const [estado, setEstado] = useState(false);
 
   function handleClick() {
     setEstado((estadoAtual) => !estadoAtual);
   }
 
-  return (<>
+  return (
     <div className={styles.atalho}>
       <button
-        className={`${estado ? styles.circleIcon: styles.icon}`}
+        className={estado ? styles.circleIcon : styles.icon}
         onClick={handleClick}
       />
+
       <p>{nome}</p>
 
-      {estado && <Janela />}
-      <div>
-      </div>
+      {estado && <Janela top={top} left={left} />}
     </div>
-
-  </>
-
   );
 }
