@@ -8,3 +8,19 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+:root {
+  font-family: "Courier New", Courier, monospace;
+  color: #122747;
+  background: #9fd6dc;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  --navy: #163665;
+  --blue: #1d5fa7;
+  --sky: #a9d9df;
+  --paper: #f7f2df;
+  --chrome: #d8d6ce;
+  --ink: #122747;
+  --green: #739f5a;
+}
+
