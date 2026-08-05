@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./style.module.css";
+import { Janela } from "../janela/main";
 
 type DescricaoNome = {
   nome: string;
@@ -7,21 +8,23 @@ type DescricaoNome = {
 
 
 export function Atalho({ nome }: DescricaoNome) {
-  const [ativo, setAtivo] = useState(false);
-  const [janelaAberta, setJanelaAberta] = useState(false)
+  const [estado, setEstado] = useState(false);
 
   function handleClick() {
-    setAtivo((estadoAtual) => !estadoAtual);
+    setEstado((estadoAtual) => !estadoAtual);
   }
 
   return (<>
     <div className={styles.atalho}>
       <button
-        className={ativo ? styles.circleIcon : styles.icon}
+        className={`${estado ? styles.circleIcon: styles.icon}`}
         onClick={handleClick}
-
       />
       <p>{nome}</p>
+
+      {estado && <Janela />}
+      <div>
+      </div>
     </div>
 
   </>
