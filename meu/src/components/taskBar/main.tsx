@@ -7,6 +7,6 @@ type TaskBarProps = {
 
 export function TaskBar({nome}: TaskBarProps) {
   return (
-    <div className={styles.taskbar} aria-label={nome} />
+    <div className={styles.taskbar} data-taskbar aria-label={nome} />
   );
 }

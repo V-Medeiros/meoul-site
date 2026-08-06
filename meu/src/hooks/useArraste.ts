@@ -1,7 +1,5 @@
 import { useLayoutEffect, useRef, useState, type PointerEvent } from "react";
 
-const ALTURA_TASKBAR = 64;
-
 type Posicao = {
   top: number;
   left: number;
@@ -15,11 +13,10 @@ export function useArraste(posicaoInicial: Posicao) {
   function limitarPosicao(left: number, top: number) {
     const largura = elementoRef.current?.offsetWidth ?? 0;
     const altura = elementoRef.current?.offsetHeight ?? 0;
+    const taskbar = document.querySelector<HTMLElement>("[data-taskbar]");
+    const topoTaskbar = taskbar?.getBoundingClientRect().top ?? window.innerHeight;
     const limiteEsquerdo = Math.max(0, window.innerWidth - largura);
-    const limiteSuperior = Math.max(
-      0,
-      window.innerHeight - altura - ALTURA_TASKBAR,
-    );
+    const limiteSuperior = Math.max(0, topoTaskbar - altura);
 
     return {
       left: Math.min(Math.max(0, left), limiteEsquerdo),
