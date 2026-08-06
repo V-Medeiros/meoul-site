@@ -6,9 +6,11 @@ type AtalhoProps = {
   nome: string;
   top: number;
   left: number;
+  width: number;
+  height: number;
 };
 
-export function Atalho({ nome, top, left }: AtalhoProps) {
+export function Atalho({ nome, top, left,width, height }: AtalhoProps) {
   const [estado, setEstado] = useState(false);
 
   function handleClick() {
@@ -24,7 +26,7 @@ export function Atalho({ nome, top, left }: AtalhoProps) {
 
       <p>{nome}</p>
 
-      {estado && <Janela top={top} left={left} />}
+      {estado && <Janela top={top} left={left} width={width} height={height} />}
     </div>
   );
 }
