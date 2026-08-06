@@ -26,7 +26,7 @@ export function Atalho({ nome, top, left, width, height }: AtalhoProps) {
 
       <p>{nome}</p>
 
-      {estado && <Janela top={top} left={left} width={width} height={height} />}
+      {estado && <Janela top={top} left={left} width={width} height={height} nome={nome} />}
     </div>
   );
 }

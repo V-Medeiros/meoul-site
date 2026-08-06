@@ -6,9 +6,10 @@ type JanelaProps = {
   left: number;
   width: number;
   height: number;
+  nome: string;
 };
 
-export function Janela({ top, left, width, height }: JanelaProps) {
+export function Janela({ top, left, width, height, nome}: JanelaProps) {
   const { posicao, elementoRef, eventosDeArraste } = useArraste({ top, left });
 
   return (
@@ -18,7 +19,7 @@ export function Janela({ top, left, width, height }: JanelaProps) {
       style={{ top: posicao.top, left: posicao.left, width, height }}
     >
       <div className={styles.titleBar} {...eventosDeArraste}>
-        Janela
+         {nome}
       </div>
     </div>
   );
