@@ -1,12 +1,10 @@
 .stage {
   position: fixed;
-  width: 20rem;
-  height: 20rem;
   margin: 0;
   overflow: hidden;
 
   background-color: cadetblue;
-  border-radius: 10%;
+  border-radius:2%;
   z-index: 1000;
 }
 
