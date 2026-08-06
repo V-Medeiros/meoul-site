@@ -2,6 +2,13 @@ import { useId, useState } from "react";
 import { useArraste } from "../../hooks/useArraste";
 import styles from "./style.module.css";
 
+let maiorZIndex = 1000;
+
+function proximoZIndex() {
+  maiorZIndex += 1;
+  return maiorZIndex;
+}
+
 type JanelaProps = {
   top: number;
   left: number;
@@ -23,17 +30,23 @@ export function Janela({
 }: JanelaProps) {
   const { posicao, elementoRef, eventosDeArraste } = useArraste({ top, left });
   const [maximizada, setMaximizada] = useState(false);
+  const [zIndex, setZIndex] = useState(proximoZIndex);
   const tituloId = useId();
 
   function alternarMaximizacao() {
     setMaximizada((estadoAtual) => !estadoAtual);
   }
 
+  function trazerParaFrente() {
+    setZIndex(proximoZIndex());
+  }
+
   return (
     <div
       ref={elementoRef}
       className={`${styles.stage} ${maximizada ? styles.maximized : ""}`}
-      style={{ top: posicao.top, left: posicao.left, width, height }}
+      style={{ top: posicao.top, left: posicao.left, width, height, zIndex }}
+      onPointerDown={trazerParaFrente}
       role="dialog"
       aria-labelledby={tituloId}
     >
@@ -47,7 +60,10 @@ export function Janela({
         <div
           className={styles.windowControls}
           aria-label={`Controles da janela ${nome}`}
-          onPointerDown={(evento) => evento.stopPropagation()}
+          onPointerDown={(evento) => {
+            evento.stopPropagation();
+            trazerParaFrente();
+          }}
           onDoubleClick={(evento) => evento.stopPropagation()}
         >
           <button
