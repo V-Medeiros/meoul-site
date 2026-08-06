@@ -11,22 +11,38 @@ type AtalhoProps = {
 };
 
 export function Atalho({ nome, top, left, width, height }: AtalhoProps) {
-  const [estado, setEstado] = useState(false);
+  const [estado, setEstado] = useState<"fechada" | "aberta" | "minimizada">(
+    "fechada",
+  );
 
   function handleClick() {
-    setEstado((estadoAtual) => !estadoAtual);
+    setEstado((estadoAtual) =>
+      estadoAtual === "aberta" ? "fechada" : "aberta",
+    );
   }
 
   return (
     <div className={styles.atalho}>
       <button
-        className={estado ? styles.circleIcon : styles.icon}
+        className={estado !== "fechada" ? styles.circleIcon : styles.icon}
         onClick={handleClick}
+        type="button"
+        aria-label={`${estado === "minimizada" ? "Restaurar" : estado === "aberta" ? "Fechar" : "Abrir"} ${nome}`}
       />
 
       <p>{nome}</p>
 
-      {estado && <Janela top={top} left={left} width={width} height={height} nome={nome} />}
+      {estado === "aberta" && (
+        <Janela
+          top={top}
+          left={left}
+          width={width}
+          height={height}
+          nome={nome}
+          onMinimize={() => setEstado("minimizada")}
+          onClose={() => setEstado("fechada")}
+        />
+      )}
     </div>
   );
 }
