@@ -1,4 +1,6 @@
-import { useRef, useState, type PointerEvent } from "react";
+import { useLayoutEffect, useRef, useState, type PointerEvent } from "react";
+
+const ALTURA_TASKBAR = 64;
 
 type Posicao = {
   top: number;
@@ -9,6 +11,34 @@ export function useArraste(posicaoInicial: Posicao) {
   const [posicao, setPosicao] = useState<Posicao>(posicaoInicial);
   const deslocamento = useRef({ x: 0, y: 0 });
   const elementoRef = useRef<HTMLDivElement>(null);
+
+  function limitarPosicao(left: number, top: number) {
+    const largura = elementoRef.current?.offsetWidth ?? 0;
+    const altura = elementoRef.current?.offsetHeight ?? 0;
+    const limiteEsquerdo = Math.max(0, window.innerWidth - largura);
+    const limiteSuperior = Math.max(
+      0,
+      window.innerHeight - altura - ALTURA_TASKBAR,
+    );
+
+    return {
+      left: Math.min(Math.max(0, left), limiteEsquerdo),
+      top: Math.min(Math.max(0, top), limiteSuperior),
+    };
+  }
+
+  useLayoutEffect(() => {
+    function ajustarAosLimites() {
+      setPosicao((posicaoAtual) =>
+        limitarPosicao(posicaoAtual.left, posicaoAtual.top),
+      );
+    }
+
+    ajustarAosLimites();
+    window.addEventListener("resize", ajustarAosLimites);
+
+    return () => window.removeEventListener("resize", ajustarAosLimites);
+  }, []);
 
   function iniciarArraste(evento: PointerEvent<HTMLDivElement>) {
     evento.currentTarget.setPointerCapture(evento.pointerId);
@@ -22,21 +52,12 @@ export function useArraste(posicaoInicial: Posicao) {
   function moverElemento(evento: PointerEvent<HTMLDivElement>) {
     if (!evento.currentTarget.hasPointerCapture(evento.pointerId)) return;
 
-    const largura = elementoRef.current?.offsetWidth ?? 0;
-    const altura = elementoRef.current?.offsetHeight ?? 0;
-    const limiteEsquerdo = Math.max(0, window.innerWidth - largura);
-    const limiteSuperior = Math.max(0, window.innerHeight - altura);
-
-    setPosicao({
-      left: Math.min(
-        Math.max(0, evento.clientX - deslocamento.current.x),
-        limiteEsquerdo,
+    setPosicao(
+      limitarPosicao(
+        evento.clientX - deslocamento.current.x,
+        evento.clientY - deslocamento.current.y,
       ),
-      top: Math.min(
-        Math.max(0, evento.clientY - deslocamento.current.y),
-        limiteSuperior,
-      ),
-    });
+    );
   }
 
   function finalizarArraste(evento: PointerEvent<HTMLDivElement>) {
