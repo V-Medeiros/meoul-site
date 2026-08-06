@@ -1,15 +1,20 @@
-import './App.css'
-import { TemplateAtalhos } from './components/templateAtalhos/main'
+import "./App.css";
+import { TaskBar } from "./components/taskBar/main";
+import { TemplateAtalhos } from "./components/templateAtalhos/main";
 
 function App() {
-  return(
+  return (
     <>
-    <main className='desktop'>
-      <TemplateAtalhos />
-    </main>
-    
+      <main className="desktop">
+        <section>
+          <TemplateAtalhos />
+        </section>
+        <section>
+          <TaskBar nome="silva"/>
+        </section>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
