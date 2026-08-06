@@ -10,7 +10,7 @@ type AtalhoProps = {
   height: number;
 };
 
-export function Atalho({ nome, top, left,width, height }: AtalhoProps) {
+export function Atalho({ nome, top, left, width, height }: AtalhoProps) {
   const [estado, setEstado] = useState(false);
 
   function handleClick() {
