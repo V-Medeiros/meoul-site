@@ -15,6 +15,7 @@ type JanelaProps = {
   width: number;
   height: number;
   nome: string;
+  descricao: string;
   onMinimize: () => void;
   onClose: () => void;
 };
@@ -25,6 +26,7 @@ export function Janela({
   width,
   height,
   nome,
+  descricao,
   onMinimize,
   onClose,
 }: JanelaProps) {
@@ -98,6 +100,9 @@ export function Janela({
           </button>
         </div>
       </div>
+      <section>
+        <div>{descricao}</div>
+      </section>
     </div>
   );
 }

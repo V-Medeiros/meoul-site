@@ -8,9 +8,10 @@ type AtalhoProps = {
   left: number;
   width: number;
   height: number;
+  descricao: string;
 };
 
-export function Atalho({ nome, top, left, width, height }: AtalhoProps) {
+export function Atalho({ nome, top, left, width, height, descricao }: AtalhoProps) {
   const [estado, setEstado] = useState<"fechada" | "aberta" | "minimizada">(
     "fechada",
   );
@@ -39,6 +40,7 @@ export function Atalho({ nome, top, left, width, height }: AtalhoProps) {
           width={width}
           height={height}
           nome={nome}
+          descricao={descricao}
           onMinimize={() => setEstado("minimizada")}
           onClose={() => setEstado("fechada")}
         />
