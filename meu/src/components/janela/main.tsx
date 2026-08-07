@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useId, useState, type ReactNode } from "react";
 import { useArraste } from "../../hooks/useArraste";
 import styles from "./style.module.css";
 
@@ -15,7 +15,7 @@ type JanelaProps = {
   width: number;
   height: number;
   nome: string;
-  descricao: string;
+  descricao: ReactNode;
   onMinimize: () => void;
   onClose: () => void;
 };

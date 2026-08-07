@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import styles from "./style.module.css";
 import { Janela } from "../janela/main";
 
@@ -8,7 +8,7 @@ type AtalhoProps = {
   left: number;
   width: number;
   height: number;
-  descricao: string;
+  descricao: ReactNode;
 };
 
 export function Atalho({ nome, top, left, width, height, descricao }: AtalhoProps) {

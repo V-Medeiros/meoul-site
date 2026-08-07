@@ -1,0 +1,111 @@
+.painel {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.painel h2,
+.painel h3,
+.painel p,
+.painel ul,
+.painel dl { margin: 0; }
+
+.painel h2 { color: var(--navy); font-size: 18px; }
+.painel h3 { font-size: 15px; }
+
+.caminho {
+  padding: 5px 8px;
+  overflow: hidden;
+  color: #3d4d5c;
+  background: #fff;
+  border: 2px inset var(--chrome);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid #a6a18f;
+}
+
+.luz {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  background: var(--green);
+  border: 1px solid #314b2a;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 0 #b9dfa8;
+}
+
+.acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.link {
+  display: inline-block;
+  color: #123f7a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:focus-visible { outline: 2px dotted var(--navy); outline-offset: 2px; }
+.listaProjetos { display: grid; gap: 10px; }
+
+.projeto {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: var(--paper);
+  border: 2px solid;
+  border-color: #fff #777b7b #777b7b #fff;
+}
+
+.subtitulo { padding-bottom: 4px; color: var(--navy); border-bottom: 1px solid #8d969c; }
+.listaLinks, .listaMarcada { display: grid; gap: 6px; padding-left: 22px; }
+.grupo { display: flex; flex-direction: column; gap: 7px; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 3px 7px;
+  color: #fff;
+  background: var(--blue);
+  border: 1px solid var(--navy);
+  box-shadow: inset 1px 1px 0 #7ca9d4;
+  font-size: 12px;
+}
+
+.ficha { display: grid; border-top: 1px solid #8d969c; border-left: 1px solid #8d969c; }
+.ficha div { display: grid; grid-template-columns: minmax(95px, 0.35fr) 1fr; }
+.ficha dt, .ficha dd { padding: 7px; border-right: 1px solid #8d969c; border-bottom: 1px solid #8d969c; }
+.ficha dt { font-weight: 700; background: #c5c3bb; }
+.ficha dd { background: var(--paper); }
+
+.observacao {
+  padding: 8px;
+  color: #465568;
+  background: #eef1df;
+  border-left: 4px solid var(--green);
+  font-size: 12px;
+}
+
+@container (min-width: 520px) {
+  .listaProjetos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
