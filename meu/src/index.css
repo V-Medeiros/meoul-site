@@ -3,7 +3,7 @@
   height: 100dvh;
   overflow: hidden;
 
-  background-color: rgb(37, 156, 165);
+  background-color: rgba(37, 156, 165, 0.66);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,4 +23,3 @@
   --ink: #122747;
   --green: #739f5a;
 }
-
