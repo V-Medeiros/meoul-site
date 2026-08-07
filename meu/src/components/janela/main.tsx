@@ -103,7 +103,7 @@ export function Janela({
           </div>
         </header>
 
-        <section>
+        <section className={styles.windowBody}>
           <div>{descricao}</div>
         </section>
 

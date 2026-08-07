@@ -1,15 +1,17 @@
 .stage {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   overflow: hidden;
 
   background: var(--chrome);
   border: 2px solid #111f2e;
   border-radius: 2%;
-  box-shadow:
+  /*  box-shadow:
     inset 2px 2px 0 #fff,
     inset -2px -2px 0 #777b7b,
-    8px 8px 0 rgba(20, 47, 65, 0.28);
+    8px 8px 0 rgba(20, 47, 65, 0.28); */
   z-index: 1000;
 }
 
@@ -142,4 +144,18 @@
   display: block;
   content: "";
   transform: rotate(90deg);
+}
+
+.windowBody {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+}
+
+.windowFooter {
+  flex-shrink: 0;
 }
