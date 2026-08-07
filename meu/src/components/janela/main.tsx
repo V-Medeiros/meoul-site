@@ -54,7 +54,7 @@ export function Janela({
         role="dialog"
         aria-labelledby={tituloId}
       >
-        <div
+        <header
           className={styles.titleBar}
           {...(!maximizada ? eventosDeArraste : {})}
           onDoubleClick={alternarMaximizacao}
@@ -101,10 +101,13 @@ export function Janela({
               <span className={styles.closeIcon} aria-hidden="true" />
             </button>
           </div>
-        </div>
-        <main>
+        </header>
+
+        <section>
           <div>{descricao}</div>
-        </main>
+        </section>
+
+        <footer />
       </div>
     </>
   );
