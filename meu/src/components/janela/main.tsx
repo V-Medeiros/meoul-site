@@ -15,7 +15,8 @@ type JanelaProps = {
   width: number;
   height: number;
   nome: string;
-  descricao: string;
+  descricao: React.ReactNode;
+
   onMinimize: () => void;
   onClose: () => void;
 };

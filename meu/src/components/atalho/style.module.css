@@ -24,7 +24,7 @@
   width: fit-content;
 }
 
-.atalho p {
+.atalho > p {
   color: wheat;
   font-size: clamp(0.6875rem, 1.5vw, 0.875rem);
   margin: -1rem;

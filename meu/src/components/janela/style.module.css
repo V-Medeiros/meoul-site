@@ -156,6 +156,11 @@
   overflow-wrap: anywhere;
 }
 
+.windowBody > div {
+  width: 100%;
+  min-width: 0;
+}
+
 .windowFooter {
   flex-shrink: 0;
 }

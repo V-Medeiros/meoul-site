@@ -4,11 +4,11 @@ import { Janela } from "../janela/main";
 
 type AtalhoProps = {
   nome: string;
+  descricao: React.ReactNode;
   top: number;
   left: number;
   width: number;
   height: number;
-  descricao: string;
 };
 
 export function Atalho({ nome, top, left, width, height, descricao }: AtalhoProps) {
