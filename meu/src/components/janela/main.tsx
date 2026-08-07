@@ -44,65 +44,68 @@ export function Janela({
   }
 
   return (
-    <div
-      ref={elementoRef}
-      className={`${styles.stage} ${maximizada ? styles.maximized : ""}`}
-      style={{ top: posicao.top, left: posicao.left, width, height, zIndex }}
-      onPointerDown={trazerParaFrente}
-      role="dialog"
-      aria-labelledby={tituloId}
-    >
-      <div
-        className={styles.titleBar}
-        {...(!maximizada ? eventosDeArraste : {})}
-        onDoubleClick={alternarMaximizacao}
-      >
-        <strong id={tituloId} className={styles.title}>{nome}</strong>
+    <>
 
+      <div
+        ref={elementoRef}
+        className={`${styles.stage} ${maximizada ? styles.maximized : ""}`}
+        style={{ top: posicao.top, left: posicao.left, width, height, zIndex }}
+        onPointerDown={trazerParaFrente}
+        role="dialog"
+        aria-labelledby={tituloId}
+      >
         <div
-          className={styles.windowControls}
-          aria-label={`Controles da janela ${nome}`}
-          onPointerDown={(evento) => {
-            evento.stopPropagation();
-            trazerParaFrente();
-          }}
-          onDoubleClick={(evento) => evento.stopPropagation()}
+          className={styles.titleBar}
+          {...(!maximizada ? eventosDeArraste : {})}
+          onDoubleClick={alternarMaximizacao}
         >
-          <button
-            className={styles.controlButton}
-            type="button"
-            onClick={onMinimize}
-            title={`Minimizar ${nome}`}
-            aria-label={`Minimizar ${nome}`}
+          <strong id={tituloId} className={styles.title}>{nome}</strong>
+
+          <div
+            className={styles.windowControls}
+            aria-label={`Controles da janela ${nome}`}
+            onPointerDown={(evento) => {
+              evento.stopPropagation();
+              trazerParaFrente();
+            }}
+            onDoubleClick={(evento) => evento.stopPropagation()}
           >
-            <span className={styles.minimizeIcon} aria-hidden="true" />
-          </button>
-          <button
-            className={styles.controlButton}
-            type="button"
-            onClick={alternarMaximizacao}
-            title={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
-            aria-label={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
-          >
-            <span
-              className={maximizada ? styles.restoreIcon : styles.maximizeIcon}
-              aria-hidden="true"
-            />
-          </button>
-          <button
-            className={`${styles.controlButton} ${styles.closeButton}`}
-            type="button"
-            onClick={onClose}
-            title={`Fechar ${nome}`}
-            aria-label={`Fechar ${nome}`}
-          >
-            <span className={styles.closeIcon} aria-hidden="true" />
-          </button>
+            <button
+              className={styles.controlButton}
+              type="button"
+              onClick={onMinimize}
+              title={`Minimizar ${nome}`}
+              aria-label={`Minimizar ${nome}`}
+            >
+              <span className={styles.minimizeIcon} aria-hidden="true" />
+            </button>
+            <button
+              className={styles.controlButton}
+              type="button"
+              onClick={alternarMaximizacao}
+              title={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
+              aria-label={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
+            >
+              <span
+                className={maximizada ? styles.restoreIcon : styles.maximizeIcon}
+                aria-hidden="true"
+              />
+            </button>
+            <button
+              className={`${styles.controlButton} ${styles.closeButton}`}
+              type="button"
+              onClick={onClose}
+              title={`Fechar ${nome}`}
+              aria-label={`Fechar ${nome}`}
+            >
+              <span className={styles.closeIcon} aria-hidden="true" />
+            </button>
+          </div>
         </div>
+        <main>
+          <div>{descricao}</div>
+        </main>
       </div>
-      <section>
-        <div>{descricao}</div>
-      </section>
-    </div>
+    </>
   );
 }
