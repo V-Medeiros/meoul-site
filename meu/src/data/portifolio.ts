@@ -54,8 +54,8 @@ export const portfolio = {
         {
             nome: "Rpg game",
             descricao:
-                "CRUD de um sistema de rpg.",
-            tecnologias: ["Java"],
+                "CRUD de um sistema de rpg com interface.",
+            tecnologias: ["Java", "JavaFX"],
             repositorio: "https://github.com/luis-sandri/RPG",
         },
 

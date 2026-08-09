@@ -1,19 +1,37 @@
-import { createContext } from "react";
+import { createContext, ReactNode, useReducer } from "react";
 
-export type EsatdoJanela = "fechada" | "aberta" | "minimizada";
+export type EstadoJanela = "fechada" | "aberta" | "minimizada";
 
-export type JanelaDesktop = {
+export type Janela = {
     id: string;
     nome: string;
-    estado: EsatdoJanela;
+    estado: EstadoJanela;
 }
 
-type JanelasContextValue = {
-    janelas: JanelaDesktop[],
-    abrir: (id: string) => void
-    fechar: (id: string) => void
-    minimizar: (id: string) => void
-    alterarPelaTaskbar: (id: string) => void
-}
+type AcaoJanela = 
+   | {type: "ABRIR"; id: string}
+   | {type: "FECHAR"; id: string}
+   | {type: "MINIMIZAR"; id: string}
+   | {type: "ALTERNAR_TASKBAR"; id: string};
 
-const JanelasContext = createContext<JanelasContextValue | null>(null);
+const janelasIniciais : Janela[] = [
+      {
+    id: "projetos",
+    nome: "Projetos",
+    estado: "fechada",
+  },
+  {
+    id: "sobre",
+    nome: "Sobre mim",
+    estado: "fechada",
+  },
+  {
+    id: "contato",
+    nome: "Contato",
+    estado: "fechada",
+  },
+]   
+
+function janelasReducer(janelas: Janela[]){
+    
+}
