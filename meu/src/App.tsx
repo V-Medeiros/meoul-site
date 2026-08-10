@@ -12,7 +12,7 @@ function App() {
         </section>
 
         <section>
-          <TaskBar nome="silva"/>
+          <TaskBar />
         </section>
       </main>
     </JanelasProvider>
