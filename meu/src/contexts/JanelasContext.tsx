@@ -38,8 +38,18 @@ const janelasIniciais: Stage[] = [
     estado: "fechada",
   },
   {
-    id: "contato",
-    nome: "Contato",
+    id: "experiencia",
+    nome: "Experiência",
+    estado: "fechada",
+  },
+  {
+    id: "habilidades",
+    nome: "Habilidades",
+    estado: "fechada",
+  },
+  {
+    id: "curriculo",
+    nome: "Curriculo",
     estado: "fechada",
   },
 ];
@@ -72,6 +82,8 @@ function janelasReducer(
     }
   });
 }
+// Exportado para o hook useJanelas, que fica em um arquivo separado.
+// eslint-disable-next-line react-refresh/only-export-components
 export const JanelasContext =
   createContext<JanelasContextType | null>(null);
 

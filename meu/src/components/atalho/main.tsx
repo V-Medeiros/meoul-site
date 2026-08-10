@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useJanelas } from "../../hooks/useJanelas";
 import styles from "./style.module.css";
 import { Janela } from "../janela/main";
 
 type AtalhoProps = {
+  id: string;
   nome: string;
   descricao: React.ReactNode;
   top: number;
@@ -11,29 +12,38 @@ type AtalhoProps = {
   height: number;
 };
 
-export function Atalho({ nome, top, left, width, height, descricao }: AtalhoProps) {
-  const [estado, setEstado] = useState<"fechada" | "aberta" | "minimizada">(
-    "fechada",
-  );
+export function Atalho({
+  id,
+  nome,
+  top,
+  left,
+  width,
+  height,
+  descricao,
+}: AtalhoProps) {
+  const { janelas, abrir, fechar, minimizar } = useJanelas();
+  const janela = janelas.find((janelaAtual) => janelaAtual.id === id);
 
-  function handleClick() {
-    setEstado((estadoAtual) =>
-      estadoAtual === "aberta" ? "fechada" : "aberta",
+  if (!janela) {
+    throw new Error(
+      `A janela "${id}" não foi cadastrada no JanelasContext.`,
     );
   }
 
   return (
     <div className={styles.atalho}>
       <button
-        className={estado !== "fechada" ? styles.circleIcon : styles.icon}
-        onClick={handleClick}
+        className={
+          janela.estado !== "fechada" ? styles.circleIcon : styles.icon
+        }
+        onClick={() => abrir(id)}
         type="button"
-        aria-label={`${estado === "minimizada" ? "Restaurar" : estado === "aberta" ? "Fechar" : "Abrir"} ${nome}`}
+        aria-label={`Abrir ${nome}`}
       />
 
       <p>{nome}</p>
 
-      {estado === "aberta" && (
+      {janela.estado === "aberta" && (
         <Janela
           top={top}
           left={left}
@@ -41,8 +51,8 @@ export function Atalho({ nome, top, left, width, height, descricao }: AtalhoProp
           height={height}
           nome={nome}
           descricao={descricao}
-          onMinimize={() => setEstado("minimizada")}
-          onClose={() => setEstado("fechada")}
+          onMinimize={() => minimizar(id)}
+          onClose={() => fechar(id)}
         />
       )}
     </div>
