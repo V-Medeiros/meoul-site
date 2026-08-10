@@ -5,6 +5,7 @@ import { JanelasProvider } from "./contexts/JanelasContext";
 
 function App() {
   return (
+  <>
     <JanelasProvider>
       <main className="desktop">
         <section>
@@ -16,6 +17,7 @@ function App() {
         </section>
       </main>
     </JanelasProvider>
+  </>
   );
 }
 

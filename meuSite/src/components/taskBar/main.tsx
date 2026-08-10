@@ -9,11 +9,7 @@ export function TaskBar() {
   );
 
   return (
-    <nav
-      className={styles.taskbar}
-      data-taskbar
-      aria-label="Barra de tarefas"
-    >
+    <nav className={styles.taskbar} data-taskbar>
       <div>icone menu</div> <br />
       {janelasAtivas.map((janela) => {
         const estaAberta = janela.estado === "aberta";
@@ -21,19 +17,12 @@ export function TaskBar() {
         return (
           <button
             key={janela.id}
-            className={`${styles.taskButton} ${estaAberta ? styles.active : ""
-              }`}
+            className={`${styles.taskButton} ${estaAberta ? styles.active : ""}`}
             type="button"
-            onClick={() => alternarPelaTaskbar(janela.id)}
-            aria-label={`${estaAberta ? "Minimizar" : "Restaurar"} ${janela.nome}`}
-            aria-pressed={estaAberta}
-          >
+            onClick={() => alternarPelaTaskbar(janela.id)}>
             <img
-              className={styles.taskIcon}
-              src="/windows-xp-icons/Folder%20Closed.png"
-              alt=""
-              aria-hidden="true"
-            />
+              className={`${styles.taskIcon}  ${styles.icon}`}/* e circle icon quando aberto */
+              src="/windows-xp-icons/Folder%20Closed.png"/>
             <span className={styles.taskLabel}>{janela.nome}</span>
           </button>);
       })}

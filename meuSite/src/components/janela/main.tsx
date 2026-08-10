@@ -21,16 +21,7 @@ type JanelaProps = {
   onClose: () => void;
 };
 
-export function Janela({
-  top,
-  left,
-  width,
-  height,
-  nome,
-  descricao,
-  onMinimize,
-  onClose,
-}: JanelaProps) {
+export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}: JanelaProps) {
   const { posicao, elementoRef, eventosDeArraste } = useArraste({ top, left });
   const [maximizada, setMaximizada] = useState(false);
   const [zIndex, setZIndex] = useState(proximoZIndex);
@@ -74,11 +65,8 @@ export function Janela({
             <button
               className={styles.controlButton}
               type="button"
-              onClick={onMinimize}
-              title={`Minimizar ${nome}`}
-              aria-label={`Minimizar ${nome}`}
-            >
-              <span className={styles.minimizeIcon} aria-hidden="true" />
+              onClick={onMinimize}>
+              <span className={styles.minimizeIcon}/>
             </button>
             <button
               className={styles.controlButton}
@@ -87,18 +75,12 @@ export function Janela({
               title={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
               aria-label={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
             >
-              <span
-                className={maximizada ? styles.restoreIcon : styles.maximizeIcon}
-                aria-hidden="true"
-              />
+              <span className={maximizada ? styles.restoreIcon : styles.maximizeIcon}/>
             </button>
             <button
               className={`${styles.controlButton} ${styles.closeButton}`}
               type="button"
-              onClick={onClose}
-              title={`Fechar ${nome}`}
-              aria-label={`Fechar ${nome}`}
-            >
+              onClick={onClose}>
               <span className={styles.closeIcon} aria-hidden="true" />
             </button>
           </div>

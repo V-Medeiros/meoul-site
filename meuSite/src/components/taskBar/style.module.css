@@ -57,3 +57,24 @@
   display: flex;
   margin-left: auto;
 }
+
+.icon {
+  background-image: url("/windows-xp-icons/Folder%20Closed.png");
+  height: 3rem;
+  width: 3rem;
+  margin: 2rem;
+  border-color: transparent;
+  background-color: transparent;
+  background-size: contain;
+
+}
+
+.circleIcon {
+  background-image: url("/windows-xp-icons/Folder%20Opened.png");
+  height: 3rem;
+  width: 3rem;
+  margin: 2rem;
+  border-color: transparent;
+  background-color: transparent;
+  background-size: contain;
+}
