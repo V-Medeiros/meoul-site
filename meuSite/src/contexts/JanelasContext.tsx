@@ -1,8 +1,4 @@
-import {
-  createContext,
-  type ReactNode,
-  useReducer,
-} from "react";
+import {createContext,type ReactNode,useReducer} from "react";
 
 export type EstadoJanela = "fechada" | "aberta" | "minimizada";
 
@@ -83,7 +79,6 @@ function janelasReducer(
   });
 }
 // Exportado para o hook useJanelas, que fica em um arquivo separado.
-// eslint-disable-next-line react-refresh/only-export-components
 export const JanelasContext =
   createContext<JanelasContextType | null>(null);
 
@@ -112,13 +107,7 @@ export function JanelasProvider({ children }: JanelasProviderProps) {
 
   return (
     <JanelasContext.Provider
-      value={{
-        janelas,
-        abrir,
-        fechar,
-        minimizar,
-        alternarPelaTaskbar,
-      }}
+      value={{ janelas, abrir, fechar, minimizar, alternarPelaTaskbar, }}
     >
       {children}
     </JanelasContext.Provider>
