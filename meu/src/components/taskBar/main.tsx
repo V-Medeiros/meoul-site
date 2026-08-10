@@ -1,12 +1,37 @@
+import { useJanelas } from "../../hooks/useJanelas";
 import styles from "./style.module.css";
 
-type TaskBarProps = {
-  nome: string;
+export function TaskBar() {
+  const { janelas, alternarPelaTaskbar } = useJanelas();
 
-};
+  const janelasAtivas = janelas.filter(
+    (janela) => janela.estado !== "fechada",
+  );
 
-export function TaskBar({nome}: TaskBarProps) {
   return (
-    <div className={styles.taskbar} data-taskbar aria-label={nome} />
+    <nav
+      className={styles.taskbar}
+      data-taskbar
+      aria-label="Barra de tarefas"
+    >
+      {janelasAtivas.map((janela) => {
+        const estaAberta = janela.estado === "aberta";
+
+        return (
+          <button
+            key={janela.id}
+            className={`${styles.taskButton} ${
+              estaAberta ? styles.active : ""
+            }`}
+            type="button"
+            onClick={() => alternarPelaTaskbar(janela.id)}
+            aria-label={`${estaAberta ? "Minimizar" : "Restaurar"} ${janela.nome}`}
+            aria-pressed={estaAberta}
+          >
+            {janela.nome}
+          </button>
+        );
+      })}
+    </nav>
   );
 }
