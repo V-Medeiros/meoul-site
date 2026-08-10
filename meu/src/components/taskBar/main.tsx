@@ -14,15 +14,16 @@ export function TaskBar() {
       data-taskbar
       aria-label="Barra de tarefas"
     >
+      <div>icone de bagulho p abrir menu</div> <br />
       {janelasAtivas.map((janela) => {
         const estaAberta = janela.estado === "aberta";
 
-        return (
+        return (<>
+
           <button
             key={janela.id}
-            className={`${styles.taskButton} ${
-              estaAberta ? styles.active : ""
-            }`}
+            className={`${styles.taskButton} ${estaAberta ? styles.active : ""
+              }`}
             type="button"
             onClick={() => alternarPelaTaskbar(janela.id)}
             aria-label={`${estaAberta ? "Minimizar" : "Restaurar"} ${janela.nome}`}
@@ -30,7 +31,7 @@ export function TaskBar() {
           >
             {janela.nome}
           </button>
-        );
+        </>);
       })}
     </nav>
   );
