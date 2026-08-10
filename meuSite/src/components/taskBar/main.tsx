@@ -35,9 +35,9 @@ export function TaskBar() {
               aria-hidden="true"
             />
             <span className={styles.taskLabel}>{janela.nome}</span>
-          </button>
-        );
+          </button>);
       })}
+    <footer className={styles.footer}>horario e coisas</footer>
     </nav>
   );
 }
