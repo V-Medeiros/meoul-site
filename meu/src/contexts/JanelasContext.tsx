@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from "react";
+import {createContext, ReactNode, useReducer } from "react";
 
 export type EstadoJanela = "fechada" | "aberta" | "minimizada";
 
@@ -13,6 +13,14 @@ type AcaoJanela =
     | { type: "FECHAR"; id: string }
     | { type: "MINIMIZAR"; id: string }
     | { type: "ALTERNAR_TASKBAR"; id: string };
+
+type JanelasContextType = {
+    janelas: Stage[];
+    abrir: (id: string) => void
+    fechar: (id: string) => void
+    minimizar: (id: string) => void
+    alternarPelaTaskbar: (id: string) => void
+}
 
 const janelasIniciais: Stage[] = [
     {
@@ -68,4 +76,49 @@ function janelasReducer(
                 };
         }
     });
+}
+
+const JanelasContext = createContext<JanelasContextType | null>(null);
+
+type JanelasProviderProps = {
+    children: ReactNode
+}
+
+export function JanelasProvider({ children }: JanelasProviderProps) {
+    const [janelas, dispatch] = useReducer(janelasReducer, janelasIniciais)
+
+
+
+function abrir(id: string) {
+    dispatch({
+        type: "ABRIR",
+        id
+    });
+}
+function fechar(id: string) {
+    dispatch({
+        type: "FECHAR",
+        id
+    });
+}
+function minimizar(id: string) {
+    dispatch({
+        type: "MINIMIZAR",
+        id
+    });
+}
+function alternarPelaTaskbar(id: string) {
+    dispatch({
+        type: "ALTERNAR_TASKBAR",
+        id
+    });
+
+   
+}
+
+return(
+    <JanelasContext.Provider value={{janelas,abrir,fechar,minimizar,alternarPelaTaskbar}}>
+        {children}
+    </JanelasContext.Provider>
+)
 }
