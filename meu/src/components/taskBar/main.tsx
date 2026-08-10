@@ -14,7 +14,7 @@ export function TaskBar() {
       data-taskbar
       aria-label="Barra de tarefas"
     >
-      <div>icone de bagulho p abrir menu</div> <br />
+      <div>icone menu</div> <br />
       {janelasAtivas.map((janela) => {
         const estaAberta = janela.estado === "aberta";
 
