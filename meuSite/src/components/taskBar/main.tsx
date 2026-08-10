@@ -18,8 +18,7 @@ export function TaskBar() {
       {janelasAtivas.map((janela) => {
         const estaAberta = janela.estado === "aberta";
 
-        return (<>
-
+        return (
           <button
             key={janela.id}
             className={`${styles.taskButton} ${estaAberta ? styles.active : ""
@@ -29,9 +28,15 @@ export function TaskBar() {
             aria-label={`${estaAberta ? "Minimizar" : "Restaurar"} ${janela.nome}`}
             aria-pressed={estaAberta}
           >
-            {janela.nome}
+            <img
+              className={styles.taskIcon}
+              src="/windows-xp-icons/Folder%20Closed.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <span className={styles.taskLabel}>{janela.nome}</span>
           </button>
-        </>);
+        );
       })}
     </nav>
   );

@@ -36,7 +36,7 @@ export function Atalho({
         className={
           janela.estado !== "fechada" ? styles.circleIcon : styles.icon
         }
-        onClick={() => abrir(id)}
+        onClick={() => abrir(id, nome)}
         type="button"
         aria-label={`Abrir ${nome}`}
       />

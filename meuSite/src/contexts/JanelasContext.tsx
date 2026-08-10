@@ -13,14 +13,14 @@ export type Stage = {
 };
 
 type AcaoJanela =
-  | { type: "ABRIR"; id: string }
+  | { type: "ABRIR"; id: string; nome: string }
   | { type: "FECHAR"; id: string }
   | { type: "MINIMIZAR"; id: string }
   | { type: "ALTERNAR_TASKBAR"; id: string };
 
 export type JanelasContextType = {
   janelas: Stage[];
-  abrir: (id: string) => void;
+  abrir: (id: string, nome: string) => void;
   fechar: (id: string) => void;
   minimizar: (id: string) => void;
   alternarPelaTaskbar: (id: string) => void;
@@ -65,7 +65,7 @@ function janelasReducer(
 
     switch (action.type) {
       case "ABRIR":
-        return { ...janela, estado: "aberta" };
+        return { ...janela, nome: action.nome, estado: "aberta" };
 
       case "FECHAR":
         return { ...janela, estado: "fechada" };
@@ -94,8 +94,8 @@ type JanelasProviderProps = {
 export function JanelasProvider({ children }: JanelasProviderProps) {
   const [janelas, dispatch] = useReducer(janelasReducer, janelasIniciais);
 
-  function abrir(id: string) {
-    dispatch({ type: "ABRIR", id });
+  function abrir(id: string, nome: string) {
+    dispatch({ type: "ABRIR", id, nome });
   }
 
   function fechar(id: string) {
