@@ -32,7 +32,6 @@ export function TaskBar() {
               className={`${styles.taskButton} ${estaAberta ? styles.active : ""}`}
               type="button"
               onClick={() => alternarPelaTaskbar(janela.id)}
-              aria-pressed={estaAberta}
             >
               <img
                 className={styles.taskIcon}

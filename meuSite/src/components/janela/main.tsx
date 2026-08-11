@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useState } from "react";
 import { useArraste } from "../../hooks/useArraste";
 import styles from "./style.module.css";
 
@@ -25,7 +25,6 @@ export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}
   const { posicao, elementoRef, eventosDeArraste } = useArraste({ top, left });
   const [maximizada, setMaximizada] = useState(false);
   const [zIndex, setZIndex] = useState(proximoZIndex);
-  const tituloId = useId();
 
   function alternarMaximizacao() {
     setMaximizada((estadoAtual) => !estadoAtual);
@@ -44,18 +43,16 @@ export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}
         style={{ top: posicao.top, left: posicao.left, width, height, zIndex }}
         onPointerDown={trazerParaFrente}
         role="dialog"
-        aria-labelledby={tituloId}
       >
         <header
           className={styles.titleBar}
           {...(!maximizada ? eventosDeArraste : {})}
           onDoubleClick={alternarMaximizacao}
         >
-          <strong id={tituloId} className={styles.title}>{nome}</strong>
+          <strong className={styles.title}>{nome}</strong>
 
           <div
             className={styles.windowControls}
-            aria-label={`Controles da janela ${nome}`}
             onPointerDown={(evento) => {
               evento.stopPropagation();
               trazerParaFrente();
@@ -79,7 +76,7 @@ export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}
               className={`${styles.controlButton} ${styles.closeButton}`}
               type="button"
               onClick={onClose}>
-              <span className={styles.closeIcon} aria-hidden="true" />
+              <span className={styles.closeIcon} />
             </button>
           </div>
         </header>

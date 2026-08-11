@@ -38,7 +38,6 @@ export function Atalho({
         }
         onClick={() => abrir(id, nome)}
         type="button"
-        aria-label={`Abrir ${nome}`}
       />
 
       <p>{nome}</p>

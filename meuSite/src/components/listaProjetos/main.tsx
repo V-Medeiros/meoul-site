@@ -13,7 +13,7 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
           <h2>{projeto.nome}</h2>
           <p>{projeto.descricao}</p>
 
-          <ul className={styles.tecnologias} aria-label="Tecnologias">
+          <ul className={styles.tecnologias}>
             {projeto.tecnologias.map((tecnologia) => (
               <li key={tecnologia}>{tecnologia}</li>
             ))}
