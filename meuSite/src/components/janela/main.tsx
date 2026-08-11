@@ -72,8 +72,6 @@ export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}
               className={styles.controlButton}
               type="button"
               onClick={alternarMaximizacao}
-              title={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
-              aria-label={`${maximizada ? "Restaurar" : "Maximizar"} ${nome}`}
             >
               <span className={maximizada ? styles.restoreIcon : styles.maximizeIcon}/>
             </button>
