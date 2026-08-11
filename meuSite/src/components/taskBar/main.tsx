@@ -4,13 +4,11 @@ import styles from "./style.module.css";
 export function TaskBar() {
   const { janelas, alternarPelaTaskbar } = useJanelas();
 
-  const janelasAtivas = janelas.filter(
-    (janela) => janela.estado !== "fechada",
-  );
+  const janelasAtivas = janelas.filter((janela) => janela.estado !== "fechada");
 
   return (
     <nav className={styles.taskbar} data-taskbar>
-      <div>icone menu</div> <br />
+      <button className={`${styles.taskButton}`}>Icone menu</button><br/>
       {janelasAtivas.map((janela) => {
         const estaAberta = janela.estado === "aberta";
 
@@ -19,14 +17,17 @@ export function TaskBar() {
             key={janela.id}
             className={`${styles.taskButton} ${estaAberta ? styles.active : ""}`}
             type="button"
-            onClick={() => alternarPelaTaskbar(janela.id)}>
+            onClick={() => alternarPelaTaskbar(janela.id)}
+          >
             <img
-              className={`${styles.taskIcon}  ${styles.icon}`}/* e circle icon quando aberto */
-              src="/windows-xp-icons/Folder%20Closed.png"/>
+              className={`${styles.taskIcon}  ${styles.icon}`} /* e circle icon quando aberto */
+              src="/windows-xp-icons/Folder%20Closed.png"
+            />
             <span className={styles.taskLabel}>{janela.nome}</span>
-          </button>);
+          </button>
+        );
       })}
-    <footer className={styles.footer}>horario e coisas</footer>
+      <footer className={styles.footer}>horario e coisas</footer>
     </nav>
   );
 }
