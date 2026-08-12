@@ -16,7 +16,7 @@ export type Projeto = {
 };
 
 export const portfolio = {
-  sobre: {
+  about: {
     titulo: "Desenvolvedor de software",
     nome: "Victor de Oliveira Medeiros",
     resumo:
@@ -33,7 +33,7 @@ export const portfolio = {
     ],
   },
 
-  projetos: [
+  projects: [
     {
       nome: "Vesta",
       descricao:
@@ -63,18 +63,22 @@ export const portfolio = {
       nome: "SPARC",
       descricao:
         "O SPARC  atua no monitoramento e gerenciamento de cargas em um cenário fotovoltaico/off-grid.",
-      tecnologias: [{name:"C++"}, {name:"LitlleFS"}, {name:"Arduino Framework"} ],
+      tecnologias: [
+        { name: "C++" },
+        { name: "LitlleFS" },
+        { name: "Arduino Framework" },
+      ],
       repositorio: "https://github.com/luis-sandri/SPARC",
     },
     {
       nome: "Rpg game",
       descricao: "CRUD de um sistema de rpg com interface.",
-      tecnologias: [{name: "Java"}, {name: "JavaFX"}],
+      tecnologias: [{ name: "Java" }, { name: "JavaFX" }],
       repositorio: "https://github.com/luis-sandri/RPG",
     },
   ] satisfies Projeto[],
 
-  experiencia: {
+  contact: {
     introducao:
       "Experiência prática adquirida por meio do desenvolvimento de projetos.",
     atividades: [
@@ -86,7 +90,7 @@ export const portfolio = {
     ],
   },
 
-  habilidades: {
+  tools: {
     linguagens: [
       "Java",
       "TypeScript",
@@ -102,16 +106,5 @@ export const portfolio = {
     ferramentas: ["MySQL", "Node.js", "Vite", "Maven", "Git", "XAMPP"],
   },
 
-  curriculo: {
-    perfil: "Desenvolvedor de software",
-    competencias: [
-      "Aplicações web",
-      "Interfaces",
-      "Lógica de negócio",
-      "Bancos de dados",
-    ],
-    formacao: [],
-    experienciasProfissionais: [],
-    projetosDestacados: ["Vesta", "CampusTrack"],
-  },
+  resume: 'Correndo atrás do meu money (oh shit!) Sigo empilhando dinheiro (God damn!) Correndo atrás do meu money (caralho!) Sigo empilhando dinheiro (yeah-yeah) Correndo atrás do meu money (oh shit!) Sigo empilhando dinheiro (ya-ya) Correndo atrás do meu money (oh shit!) Sigo empilhando dinheiro Na pista, baby, eu tô na pista Misturas alucinantes tem na minha bebida (oh) Você já tá frita Usa lsd pra depois sentar na minha pi– (pew-pew) Nêga, viva la vida Tá saindo craque, meu estúdio virou bica (prr) Lucrando junto com os manos Muito talento, dropa a batida, e eu Amo meu refrigerante (God damn!) Nego, o meu dentista só trabalha com diamante (oh shit!) Te faço suar, yeah, dentro da Mustang Cê toda assanhada, te deixei igual um hidrante Na net, só dá Jovem Dex (desce!) Ela me escuta quando quer sair da bad (God damn!) Trabalho com números, os falsos não competem Coleciono hit pra multiplicar meu cash Nego, aqui não passa nada (ye-yeah) Minha firma toda armada (aham) Sentindo o contrabando (aham) Cofres dentro da minha casa (ye-yeah) Sabe de nada (ye-ye-yeah) Deixo minha mãe bilionária (ye-ye-ya) Ela é uma celebridade (oh) Só vestindo peça rara (ye-yeah) Correndo atrás do meu money (pew-pew) Sigo empilhando dinheiro (oh shit!) Correndo atrás do meu money Sigo empilhando dinheiro (ahn) Correndo atrás do meu money (oh shit!) Sigo empilhando dinheiro Correndo atrás do meu money Sigo empilhando dinheiro Já disse não passa nada Meu bonde todo na bala Faço hit o dia inteiro Jovem Dex é o cara Correndo atrás do meu money Sigo empilhando dinheiro Correndo atrás do meu money Sigo empilhando dinheiro Correndo atrás do meu money Sigo empilhando dinheiro Correndo atrás do meu money Sigo empilhando dinheiro Na pista, baby eu to na pista Misturas alucinantes tem na minha bebida Você já tá frita Usa LSD pra depois sentar na minha p. Nega, viva lá vida Tá saindo crack, meu estúdio virou bica Lucrando junto com os manos Muito talento, dropa a batida E eu amo meu refrigerante Nego, meu dentista só trabalha com diamante Te faço soar, yeah Dentro da mustang Cê toda assanha te deixo igual um hidrante Na net só da Jovem Dex Ela me escuta quando quer sair da bad Trabalho com números, os falsos não competem Coleciono hit pra multiplicar meu cash Nego aqui não passa nada Minha firma toda armada Sentido contra bando Cofres dentro da minha casa Sabe de nada Deixo minha mãe bilionaria Ela é um acelebridade Só vestindo peça rara, yeah '
 };
