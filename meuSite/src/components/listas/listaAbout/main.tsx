@@ -7,4 +7,5 @@ type ListaDescricaoProps = {
 
 export function ListaProjetos({ Descricao }: ListaDescricaoProps) {
   return <div className={styles.lista}>{Descricao}</div>;
+  
 }

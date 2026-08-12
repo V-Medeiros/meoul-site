@@ -1,115 +1,117 @@
 export type LinkExterno = {
-    rotulo: string;
-    url: string;
+  rotulo: string;
+  url: string;
+};
+
+type Technology = {
+  name: string;
 };
 
 export type Projeto = {
-    nome: string;
-    descricao: string;
-    tecnologias: string[];
-    repositorio?: string;
-    demonstracao?: string;
+  nome: string;
+  descricao: string;
+  tecnologias: Technology[];
+  repositorio?: string;
+  demonstracao?: string;
 };
 
 export const portfolio = {
-    sobre: {
-        titulo: "Desenvolvedor de software",
-        nome: "Victor",
-        resumo:
-            "Desenvolvo aplicações e uso meus projetos para explorar soluções web, interfaces e novas tecnologias.",
-        links: [
-            {
-                rotulo: "GitHub",
-                url: "https://github.com/V-Medeiros",
-            },
-            {
-                rotulo: "E-mail",
-                url: "mailto:victorme2806@gmail.com",
-            },
-        ],
+  sobre: {
+    titulo: "Desenvolvedor de software",
+    nome: "Victor de Oliveira Medeiros",
+    resumo:
+      "Desenvolvo aplicações e uso meus projetos para explorar soluções web, interfaces e novas tecnologias.",
+    links: [
+      {
+        rotulo: "GitHub",
+        url: "https://github.com/V-Medeiros",
+      },
+      {
+        rotulo: "E-mail",
+        url: "mailto:victorme2806@gmail.com",
+      },
+    ],
+  },
+
+  projetos: [
+    {
+      nome: "Vesta",
+      descricao:
+        "SaaS de foco gamificado que transforma o tempo de concentração em uma fogueira virtual.",
+      tecnologias: [
+        { name: "TypeScript" },
+        { name: "React" },
+        { name: "CSS" },
+        { name: "Vite" },
+      ],
+      repositorio: "https://github.com/V-Medeiros/Vesta",
     },
-
-    projetos: [
-        {
-            nome: "Vesta",
-            descricao:
-                "SaaS de foco gamificado que transforma o tempo de concentração em uma fogueira virtual.",
-            tecnologias: ["TypeScript", "React"],
-            repositorio: "https://github.com/V-Medeiros/Vesta",
-        },
-        {
-            nome: "CampusTrack",
-            descricao:
-                "Sistema para gerenciar instituições, espaços, usuários, mapas e eventos.",
-            tecnologias: ["PhP", "Javascript", "MySQL"],
-            repositorio: "https://github.com/luis-sandri/CampusTrack",
-        },
-        {
-            nome: "SPARC",
-            descricao:
-                "O SPARC  atua no monitoramento e gerenciamento de cargas em um cenário fotovoltaico/off-grid.",
-            tecnologias: ["C++"],
-            repositorio: "https://github.com/luis-sandri/SPARC",
-        },
-        {
-            nome: "Rpg game",
-            descricao:
-                "CRUD de um sistema de rpg com interface.",
-            tecnologias: ["Java", "JavaFX"],
-            repositorio: "https://github.com/luis-sandri/RPG",
-        },
-
-    ] satisfies Projeto[],
-
-    experiencia: {
-        introducao:
-            "Experiência prática adquirida por meio do desenvolvimento de projetos.",
-        atividades: [
-            "Desenvolvimento de aplicações web",
-            "Construção de interfaces",
-            "Implementação de regras de negócio",
-            "Integração com bancos de dados",
-            "Versionamento com Git",
-        ],
+    {
+      nome: "CampusTrack",
+      descricao:
+        "Sistema para gerenciar instituições, espaços, usuários, mapas e eventos.",
+      tecnologias: [
+        { name: "PHP" },
+        { name: "Javascript" },
+        { name: "SQL" },
+        { name: "HTML" },
+        { name: "CSS" },
+      ],
+      repositorio: "https://github.com/luis-sandri/CampusTrack",
     },
-
-    habilidades: {
-        linguagens: [
-            "Java",
-            "TypeScript",
-            "JavaScript",
-            "PHP",
-            "Python",
-            "HTML",
-            "CSS",
-            "SQL",
-        ],
-        frameworks: [
-            "React",
-            "Spring Boot",
-            "Tailwind CSS",
-            "Bootstrap",
-        ],
-        ferramentas: [
-            "MySQL",
-            "Node.js",
-            "Vite",
-            "Maven",
-            "Git",
-            "XAMPP",
-        ],
+    {
+      nome: "SPARC",
+      descricao:
+        "O SPARC  atua no monitoramento e gerenciamento de cargas em um cenário fotovoltaico/off-grid.",
+      tecnologias: [{name:"C++"}, {name:"LitlleFS"}, {name:"Arduino Framework"} ],
+      repositorio: "https://github.com/luis-sandri/SPARC",
     },
-
-    curriculo: {
-        perfil: "Desenvolvedor de software",
-        competencias: [
-            "Aplicações web",
-            "Interfaces",
-            "Lógica de negócio",
-            "Bancos de dados",
-        ],
-        formacao: [],
-        experienciasProfissionais: [],
-        projetosDestacados: ["Vesta", "CampusTrack"],
+    {
+      nome: "Rpg game",
+      descricao: "CRUD de um sistema de rpg com interface.",
+      tecnologias: [{name: "Java"}, {name: "JavaFX"}],
+      repositorio: "https://github.com/luis-sandri/RPG",
     },
+  ] satisfies Projeto[],
+
+  experiencia: {
+    introducao:
+      "Experiência prática adquirida por meio do desenvolvimento de projetos.",
+    atividades: [
+      "Desenvolvimento de aplicações web",
+      "Construção de interfaces",
+      "Implementação de regras de negócio",
+      "Integração com bancos de dados",
+      "Versionamento com Git",
+    ],
+  },
+
+  habilidades: {
+    linguagens: [
+      "Java",
+      "TypeScript",
+      "JavaScript",
+      "PHP",
+      "C++",
+      "Python",
+      "HTML",
+      "CSS",
+      "SQL",
+    ],
+    frameworks: ["React", "Spring Boot", "Tailwind CSS", "Bootstrap"],
+    ferramentas: ["MySQL", "Node.js", "Vite", "Maven", "Git", "XAMPP"],
+  },
+
+  curriculo: {
+    perfil: "Desenvolvedor de software",
+    competencias: [
+      "Aplicações web",
+      "Interfaces",
+      "Lógica de negócio",
+      "Bancos de dados",
+    ],
+    formacao: [],
+    experienciasProfissionais: [],
+    projetosDestacados: ["Vesta", "CampusTrack"],
+  },
 };
