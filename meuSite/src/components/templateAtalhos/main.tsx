@@ -14,7 +14,7 @@ export function TemplateAtalhos() {
         left={1500}
         width={600}
         height={400}
-        descricao="about me"
+        descricao={<ListaResume resume={portfolio.resume} />} 
       />
       <Atalho
         id="projects"
@@ -32,7 +32,7 @@ export function TemplateAtalhos() {
         left={890}
         width={420}
         height={280}
-        descricao="alou"
+        descricao={<ListaResume resume={portfolio.resume} />} 
       />
       <Atalho
         id="tools"
@@ -40,7 +40,7 @@ export function TemplateAtalhos() {
         top={140}
         left={200}
         width={480}
-        height={320}
+        height={370}
         descricao={<ListaTools tools={portfolio.tools} />}
       />
       <Atalho
