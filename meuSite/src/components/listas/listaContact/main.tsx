@@ -15,7 +15,7 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
 
           <ul className={styles.tecnologias}>
             {projeto.tecnologias.map((tecnologia) => (
-              <li key={tecnologia}>{tecnologia}</li>
+              <li key={tecnologia.name}>{tecnologia.name}</li>
             ))}
           </ul>
 
