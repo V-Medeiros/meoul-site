@@ -1,47 +1,44 @@
-import type { Projeto } from "../../../data/portifolio";
 import styles from "./style.module.css";
 
-type ListaProjetosProps = {
-  projetos: Projeto[];
+type Tools = {
+  linguagens: string[];
+  frameworks: string[];
+  ferramentas: string[];
 };
 
-export function ListaProjetos({ projetos }: ListaProjetosProps) {
+type ListaToolsProps = {
+  tools: Tools;
+};
+
+export function ListaTools({ tools }: ListaToolsProps) {
   return (
     <div className={styles.lista}>
-      {projetos.map((projeto) => (
-        <article className={styles.projeto} key={projeto.nome}>
-          <h2>{projeto.nome}</h2>
-          <p>{projeto.descricao}</p>
+      <section className={styles.grupo}>
+        <h2>Linguagens</h2>
+        <ul className={styles.itens}>
+          {tools.linguagens.map((linguagem) => (
+            <li key={linguagem}>{linguagem}</li>
+          ))}
+        </ul>
+      </section>
 
-          <ul className={styles.tecnologias}>
-            {projeto.tecnologias.map((tecnologia) => (
-              <li key={tecnologia}>{tecnologia}</li>
-            ))}
-          </ul>
+      <section className={styles.grupo}>
+        <h2>Frameworks</h2>
+        <ul className={styles.itens}>
+          {tools.frameworks.map((framework) => (
+            <li key={framework}>{framework}</li>
+          ))}
+        </ul>
+      </section>
 
-          <div className={styles.links}>
-            {projeto.repositorio && (
-              <a
-                href={projeto.repositorio}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Repositório
-              </a>
-            )}
-
-            {projeto.demonstracao && (
-              <a
-                href={projeto.demonstracao}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Demonstração
-              </a>
-            )}
-          </div>
-        </article>
-      ))}
+      <section className={styles.grupo}>
+        <h2>Ferramentas</h2>
+        <ul className={styles.itens}>
+          {tools.ferramentas.map((ferramenta) => (
+            <li key={ferramenta}>{ferramenta}</li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
