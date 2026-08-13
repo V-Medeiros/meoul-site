@@ -40,7 +40,7 @@ export function TemplateAtalhos() {
         top={140}
         left={200}
         width={480}
-        height={370}
+        height={375}
         descricao={<ListaTools tools={portfolio.tools} />}
       />
       <Atalho
