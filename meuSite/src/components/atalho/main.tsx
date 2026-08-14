@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useJanelas } from "../../hooks/useJanelas";
 import styles from "./style.module.css";
 import { Janela } from "../janela/main";
@@ -8,8 +9,8 @@ type AtalhoProps = {
   descricao: React.ReactNode;
   top: number;
   left: number;
-  width: number;
-  height: number;
+  width: CSSProperties["width"];
+  height: CSSProperties["height"];
 };
 
 export function Atalho({

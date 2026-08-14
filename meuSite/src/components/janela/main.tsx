@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { useArraste } from "../../hooks/useArraste";
 import styles from "./style.module.css";
 
@@ -12,8 +12,8 @@ function proximoZIndex() {
 type JanelaProps = {
   top: number;
   left: number;
-  width: number;
-  height: number;
+  width: CSSProperties["width"];
+  height: CSSProperties["height"];
   nome: string;
   descricao: React.ReactNode;
 
