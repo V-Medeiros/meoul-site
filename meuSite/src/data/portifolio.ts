@@ -84,7 +84,7 @@ export const portfolio = {
 
   contact: {
     introducao:
-      "a fazer.",
+      "mailto:victorme2806@gmail.com",
     atividades: [
       "Desenvolvimento de aplicações web",
       "Construção de interfaces",

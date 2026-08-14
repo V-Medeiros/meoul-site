@@ -11,7 +11,6 @@ function App() {
         <section>
           <TemplateAtalhos />
         </section>
-
         <section>
           <TaskBar />
         </section>

@@ -23,8 +23,6 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
             {projeto.repositorio && (
               <a
                 href={projeto.repositorio}
-                target="_blank"
-                rel="noreferrer"
               >
                 Repositório
               </a>
@@ -33,8 +31,6 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
             {projeto.demonstracao && (
               <a
                 href={projeto.demonstracao}
-                target="_blank"
-                rel="noreferrer"
               >
                 Demonstração
               </a>
