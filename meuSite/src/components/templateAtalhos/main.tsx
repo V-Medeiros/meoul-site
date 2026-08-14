@@ -3,6 +3,7 @@ import { ListaProjetos } from "../listaProjetos/main";
 import { portfolio } from "../../data/portifolio";
 import { ListaResume } from "../listas/listaResume/main";
 import { ListaTools } from "../listas/listaTools/main";
+import { ListaAbout } from "../listas/listaAbout/main";
 
 export function TemplateAtalhos() {
   return (
@@ -12,9 +13,9 @@ export function TemplateAtalhos() {
         nome="about"
         top={150}
         left={1500}
-        width={600}
-        height={400}
-        descricao={<ListaResume resume={portfolio.resume} />} 
+        width={660}
+        height={480}
+        descricao={<ListaAbout about={portfolio.about} />}
       />
       <Atalho
         id="projects"
