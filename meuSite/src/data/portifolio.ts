@@ -20,7 +20,7 @@ export const portfolio = {
     titulo: "Desenvolvedor de software",
     nome: "Victor de Oliveira Medeiros",
     resumo:
-      "Desenvolvo aplicações e uso meus projetos para explorar soluções web, interfaces e novas tecnologias.",
+      "Correndo atrás do meu money (oh shit!) Sigo empilhando dinheiro (God damn!) Correndo atrás do meu money (caralho!)  .",
     links: [
       {
         rotulo: "GitHub",
@@ -28,6 +28,10 @@ export const portfolio = {
       },
       {
         rotulo: "E-mail",
+        url: "mailto:victorme2806@gmail.com",
+      },
+      {
+        rotulo: "Linkedin",
         url: "mailto:victorme2806@gmail.com",
       },
     ],
@@ -80,7 +84,7 @@ export const portfolio = {
 
   contact: {
     introducao:
-      "Experiência prática adquirida por meio do desenvolvimento de projetos.",
+      "a fazer.",
     atividades: [
       "Desenvolvimento de aplicações web",
       "Construção de interfaces",
