@@ -17,7 +17,8 @@ export function TaskBar() {
   return (
     <nav className={styles.taskbar} data-taskbar>
       <button className={styles.menuButton} type="button">
-        <span>Menu</span>
+        <span>Icone Menu</span>
+        {/* ao clicar no icone meu abrir uma section com... agent ou arquivos normais e x modo */}
       </button>
 
       <div className={styles.separator} />
