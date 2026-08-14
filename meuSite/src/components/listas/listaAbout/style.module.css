@@ -1,70 +1,183 @@
-.lista {
+.aboutLayout {
   display: grid;
-  width: 100%;
-  gap: 12px;
-  text-align: left;
-}
-
-.projeto {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  padding: 12px;
+  min-height: 100%;
+  overflow: hidden;
   color: var(--ink);
   background: var(--paper);
   border: 2px solid;
-  border-color: #fff #777b7b #777b7b #fff;
+  border-color: #777b7b #fff #fff #777b7b;
+  grid-template-columns: 220px minmax(0, 1fr);
 }
 
-
-.projeto h2,
-.projeto p {
-  margin: 0;
-}
-
-.projeto ul {
-  margin: 0;
-}
-
-.projeto h2 {
-  color: var(--navy);
-  font-size: 18px;
-  line-height: 1.2;
+.profileCard {
+  position: relative;
+  display: flex;
+  padding: 20px 10px 2px;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background: #2362a2;
+  border-right: 4px solid #153f70;
   text-align: center;
 }
 
-.projeto p {
-  color: #1a1a1a;
-  font-size: 13px;
-  line-height: 1.5;
-  text-align: left;
+.profileBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 7px;
+  color: #153757;
+  background: #6fee64;
+  border: 2px solid #173955;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.tecnologias {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 0;
-  list-style: none;
+.avatarFrame {
+  width: 112px;
+  height: 126px;
+  margin: 24px 0 14px;
+  overflow: hidden;
+  background: #eef3ed;
+  border: 4px solid #143a62;
+  box-shadow: 5px 5px 0 #143a62;
 }
 
-.tecnologias li {
-  padding: 3px 6px;
-  color: #fff;
-  background: var(--blue);
-  border: 1px solid var(--navy);
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.08);
+}
+
+.profileCard h2 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.profileCard > p {
+  margin-top: 20px;
   font-size: 12px;
+  line-height: 1.4;
+}
+
+.profileStatus {
+  width: 100%;
+  padding-top: 13px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  margin-top: 1.2rem;
+}
+
+.profileStatus span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  background: #6fee64;
+  border: 1px solid #163954;
+}
+
+
+
+.aboutCopy {
+  padding: 30px 32px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #3270a0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.aboutCopy h1 {
+  margin: 0 0 18px;
+  color: #173c6c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  line-height: 1.08;
+}
+
+.summary {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.quickFacts {
+  display: grid;
+  margin: 22px 0 18px;
+  gap: 9px;
+}
+
+.quickFacts div {
+  display: grid;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed #9aa9a8;
+  font-size: 1rem;
+  grid-template-columns: 76px 1fr;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.quickFacts dt {
+  color: #5b6d6c;
+}
+
+.quickFacts dd {
+  margin: 0;
+  font-weight: 700;
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 2px;
+  gap: 8px;
 }
 
 .links a {
-  color: var(--navy);
-  font-weight: 700;
+  padding: 7px 10px;
+  color: #fff;
+  background: var(--blue);
+  border: 2px solid;
+  border-color: #8fc5e0 #123b63 #123b63 #8fc5e0;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 #78817c;
+}
+
+.links a:active {
+  border-color: #123b63 #8fc5e0 #8fc5e0 #123b63;
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
+
+.links a:focus-visible {
+  outline: 2px solid #f0cf4f;
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .aboutLayout {
+    display: block;
+  }
+
+  .profileCard {
+    min-height: 290px;
+    border-right: 0;
+    border-bottom: 4px solid #153f70;
+  }
+
+  .aboutCopy {
+    padding: 24px 20px;
+  }
+
+  .aboutCopy h1 {
+    font-size: 23px;
+  }
 }
