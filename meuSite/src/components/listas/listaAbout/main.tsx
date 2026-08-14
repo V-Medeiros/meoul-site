@@ -40,7 +40,7 @@ export function ListaAbout({ about }: ListaAboutProps) {
 
       <section className={styles.aboutCopy}>
         <p className={styles.eyebrow}>ABOUT ME.TXT</p>
-        <h1>Olá! colocar alguma coisa.</h1>
+        <h1>Olá! frase bonita .</h1>
         <p className={styles.summary}>{about.resumo}</p>
 
         <dl className={styles.quickFacts}>
