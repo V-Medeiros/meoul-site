@@ -18,7 +18,7 @@
   font-size: 0.9rem;
 }
 
-.startButton,
+.menuButton,
 .taskButton {
   height: 2.65rem;
   padding: 0.3rem 0.65rem;
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.startButton {
+.menuButton {
   display: flex;
   flex: 0 0 auto;
   min-width: 5.4rem;
@@ -43,7 +43,7 @@
   font-weight: 700;
 }
 
-.startButton:active,
+.menuButton:active,
 .taskButton:active,
 .active {
   padding: calc(0.3rem + 1px) calc(0.65rem - 1px) calc(0.3rem - 1px) calc(0.65rem + 1px);
@@ -54,7 +54,7 @@
     inset -1px -1px 0 #dfdfdf;
 }
 
-.startButton:focus-visible,
+.menuButton:focus-visible,
 .taskButton:focus-visible {
   outline: 1px dotted #000;
   outline-offset: -5px;

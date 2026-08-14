@@ -16,8 +16,8 @@ export function TaskBar() {
 
   return (
     <nav className={styles.taskbar} data-taskbar>
-      <button className={styles.startButton} type="button">
-        <span>Start</span>
+      <button className={styles.menuButton} type="button">
+        <span>Menu</span>
       </button>
 
       <div className={styles.separator} />
