@@ -84,7 +84,7 @@ export const portfolio = {
 
   contact: {
     links:
-      "mailto:victorme2806@gmail.com",
+      "victorme2806@gmail.com",
   },
 
   tools: {
