@@ -85,13 +85,6 @@ export const portfolio = {
   contact: {
     introducao:
       "mailto:victorme2806@gmail.com",
-    atividades: [
-      "Desenvolvimento de aplicações web",
-      "Construção de interfaces",
-      "Implementação de regras de negócio",
-      "Integração com bancos de dados",
-      "Versionamento com Git",
-    ],
   },
 
   tools: {
