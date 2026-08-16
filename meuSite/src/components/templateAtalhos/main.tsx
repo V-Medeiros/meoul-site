@@ -24,7 +24,7 @@ export function TemplateAtalhos() {
         top={600}
         left={1600}
         width="clamp(20rem, 35vw, 26rem)"
-        height="clamp(22rem, 60dvh, 32rem)"
+        height="clamp(22rem, 60dvh, 38.5rem)"
         descricao={<ListaProjetos projetos={portfolio.projects} />}
       />
       <Atalho
