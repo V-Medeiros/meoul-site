@@ -1,6 +1,5 @@
 type Contact = {
-  introducao: string;
-  atividades: string[];
+  links: string;
 };
 
 type ListaContactProps = {
@@ -13,14 +12,8 @@ export function ListaContact({ contact }: ListaContactProps) {
   return (
     <>
       <div>
-        <p>{contact.introducao}</p>
-
-        <div>
-          {contact.atividades.map((atividade: string) => (
-            <li key={atividade}>{atividade}</li>
-          ))}
+        <p>{contact.links}</p>
         </div>
-      </div>
     </>
   );
 }

@@ -83,7 +83,7 @@ export const portfolio = {
   ] satisfies Projeto[],
 
   contact: {
-    introducao:
+    links:
       "mailto:victorme2806@gmail.com",
   },
 
