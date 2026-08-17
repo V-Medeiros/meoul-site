@@ -41,7 +41,7 @@ export const portfolio = {
     {
       nome: "Vesta",
       descricao:
-        "SaaS de foco gamificado que transforma o tempo de concentração em uma fogueira virtual.",
+        "Aplicativo de foco gamificado que transforma o tempo de concentração em uma fogueira virtual.",
       tecnologias: [
         { name: "TypeScript" },
         { name: "React" },
