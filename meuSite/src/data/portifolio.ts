@@ -84,7 +84,13 @@ export const portfolio = {
 
   contact: {
     links:
-      "victorme2806@gmail.com",
+    [
+      {
+        rotulo: "send",
+        url: "mailto:victorme2806@gmail.com",
+        email: "victorme2806@gmail.com",
+      }
+    ]
   },
 
   tools: {

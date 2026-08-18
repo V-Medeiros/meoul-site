@@ -1,5 +1,13 @@
+import styles from "./style.module.css";
+
 type Contact = {
-  links: string;
+  links: LinkContact[];
+};
+
+type LinkContact = {
+  rotulo: string;
+  url: string;
+  email: string;
 };
 
 type ListaContactProps = {
@@ -11,9 +19,25 @@ type ListaContactProps = {
 export function ListaContact({ contact }: ListaContactProps) {
   return (
     <>
-      <div>
-        <p>{contact.links}</p>
-        </div>
+      <nav className={styles.links}>
+        {contact.links.map((link) => {
+          const externo = !link.url.startsWith("mailto:");
+
+          return (
+            <div className={styles.contact}>
+              <p>{link.email}</p>
+              <a
+                key={link.url}
+                href={link.url}
+                target={externo ? "_blank" : undefined}
+                rel={externo ? "noreferrer" : undefined}
+              >
+                {link.rotulo}
+              </a>
+            </div>
+          );
+        })}
+      </nav>
     </>
   );
 }
