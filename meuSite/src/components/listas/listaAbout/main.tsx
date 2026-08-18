@@ -30,8 +30,12 @@ export function ListaAbout({ about }: ListaAboutProps) {
           />
         </div>
 
-        <h2>{about.nome}</h2>
-        <p className={styles.jobTitle}>Software Engineering Student</p>
+        <h3 className={styles.jobTitle}>Software Engineering Student</h3>
+        <div className={styles.focusInfo}>
+          <span>Focus</span>
+          <strong>Full-stack development</strong>
+        </div>
+
         <div className={styles.profileStatus}>
           <span aria-hidden="true" />
           Open to new opportunities

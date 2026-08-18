@@ -37,8 +37,8 @@
 }
 
 .avatarFrame {
-  width: 112px;
-  height: 126px;
+  width: 140px;
+  height: 158px;
   margin: 24px 0 14px;
   overflow: hidden;
   background: #eef3ed;
@@ -69,6 +69,13 @@
   line-height: 1.15;
 }
 
+
+.profileCard h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.15;
+}
+
 .profileCard > p {
   margin-top: 25px;
   font-size: 12px;
@@ -90,6 +97,29 @@
   margin-right: 5px;
   background: #6fee64;
   border: 1px solid #163954;
+}
+
+.focusInfo {
+  display: grid;
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 14px;
+  gap: 5px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.45);
+  text-align: left;
+}
+
+.focusInfo span {
+  color: #9fe997;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.focusInfo strong {
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 
