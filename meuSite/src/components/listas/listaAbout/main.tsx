@@ -45,7 +45,7 @@ export function ListaAbout({ about }: ListaAboutProps) {
           <li>build web applications and back-end systems,</li>
           <li>design reliable software that can evolve over time,</li>
           <li>work with databases and embedded systems, and</li>
-          <li>turn fun ideas into practical projects!</li>
+          <li>like to turn fun ideas into real projects!</li>
         </ul>
         <p className={styles.summary}>{about.resumo}</p>
 
