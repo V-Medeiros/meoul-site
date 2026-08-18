@@ -25,12 +25,12 @@ export type JanelasContextType = {
 const janelasIniciais: Stage[] = [
   {
     id: "projects",
-    nome: "Projetos",
+    nome: "Projects",
     estado: "fechada",
   },
   {
     id: "about",
-    nome: "Sobre mim",
+    nome: "About",
     estado: "fechada",
   },
   {
@@ -40,7 +40,7 @@ const janelasIniciais: Stage[] = [
   },
   {
     id: "tools",
-    nome: "Habilidades",
+    nome: "Tools",
     estado: "fechada",
   },
   {

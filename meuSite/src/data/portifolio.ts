@@ -17,10 +17,10 @@ export type Projeto = {
 
 export const portfolio = {
   about: {
-    titulo: "Desenvolvedor de software",
+    titulo: "Software Developer",
     nome: "Victor de Oliveira Medeiros",
     resumo:
-      "Correndo atrás do meu money (oh shit!) Sigo empilhando dinheiro (God damn!) Correndo atrás do meu money (caralho!)  .",
+      " .",
     links: [
       {
         rotulo: "GitHub",
@@ -41,7 +41,7 @@ export const portfolio = {
     {
       nome: "Vesta",
       descricao:
-        "Aplicativo de foco gamificado que transforma o tempo de concentração em uma fogueira virtual.",
+        "A gamified focus app that turns concentration time into a virtual campfire.",
       tecnologias: [
         { name: "TypeScript" },
         { name: "React" },
@@ -53,7 +53,7 @@ export const portfolio = {
     {
       nome: "CampusTrack",
       descricao:
-        "Sistema para gerenciar instituições, espaços, usuários, mapas e eventos.",
+        "A system for managing institutions, spaces, users, maps, and events.",
       tecnologias: [
         { name: "PHP" },
         { name: "Javascript" },
@@ -66,7 +66,7 @@ export const portfolio = {
     {
       nome: "SPARC",
       descricao:
-        "O SPARC  atua no monitoramento e gerenciamento de cargas em um cenário fotovoltaico/off-grid.",
+        "SPARC monitors and manages electrical loads in photovoltaic and off-grid environments.",
       tecnologias: [
         { name: "C++" },
         { name: "LitlleFS" },
@@ -76,7 +76,7 @@ export const portfolio = {
     },
     {
       nome: "Rpg game",
-      descricao: "CRUD de um sistema de rpg com interface.",
+      descricao: "A CRUD application for an RPG system with a graphical interface.",
       tecnologias: [{ name: "Java" }, { name: "JavaFX" }],
       repositorio: "https://github.com/luis-sandri/RPG",
     },

@@ -20,36 +20,36 @@ export function ListaAbout({ about }: ListaAboutProps) {
   return (
     <article className={styles.aboutLayout}>
       <aside className={styles.profileCard}>
-        <span className={styles.profileBadge}>DISPONÍVEL</span>
+        <span className={styles.profileBadge}>AVAILABLE</span>
 
         <div className={styles.avatarFrame}>
           <img
             className={styles.avatar}
             src="/dasilva.png"
-            alt={`Ilustração de ${about.nome}`}
+            alt={`Illustration of ${about.nome}`}
           />
         </div>
 
         <h2>{about.nome}</h2>
-        <p className={styles.jobTitle}>Engenheiro de software</p>
+        <p className={styles.jobTitle}>Software Engineer</p>
         <div className={styles.profileStatus}>
           <span aria-hidden="true" />
-          Aberto a novas oportunidades
+          Open to new opportunities
         </div>
       </aside>
 
       <section className={styles.aboutCopy}>
         <p className={styles.eyebrow}>ABOUT ME.TXT</p>
-        <h1>Olá! frase bonita .</h1>
+        <h1>Hello! Nice phrase.</h1>
         <p className={styles.summary}>{about.resumo}</p>
 
         <dl className={styles.quickFacts}>
           <div>
-            <dt>Nome</dt>
+            <dt>Name</dt>
             <dd>{about.nome}</dd>
           </div>
           <div>
-            <dt>Atuação</dt>
+            <dt>Role</dt>
             <dd>{about.titulo}</dd>
           </div>
         </dl>

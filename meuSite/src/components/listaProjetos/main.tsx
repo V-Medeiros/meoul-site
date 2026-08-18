@@ -24,7 +24,7 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
               <a
                 href={projeto.repositorio}
               >
-                Repositório
+                Repository
               </a>
             )}
 
@@ -32,7 +32,7 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
               <a
                 href={projeto.demonstracao}
               >
-                Demonstração
+                Demo
               </a>
             )}
           </div>
