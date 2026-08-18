@@ -42,10 +42,10 @@ export function ListaAbout({ about }: ListaAboutProps) {
         <p className={styles.eyebrow}>ABOUT ME.TXT</p>
         <h1 className={styles.eyebrow}>Hi! I’m Victor i...</h1>
         <ul className={styles.bioList}>
-          <li>build web applications with React and TypeScript,</li>
-          <li>develop back-end systems with Java and PHP,</li>
-          <li>work with databases and embedded systems</li>
-          <li>enjoy turning ideas into practical projects!</li>
+          <li>build web applications and back-end systems,</li>
+          <li>design reliable software that can evolve over time,</li>
+          <li>work with databases and embedded systems, and</li>
+          <li>turn fun ideas into practical projects!</li>
         </ul>
         <p className={styles.summary}>{about.resumo}</p>
 
