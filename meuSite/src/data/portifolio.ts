@@ -20,7 +20,7 @@ export const portfolio = {
     titulo: "Software Developer",
     nome: "Victor de Oliveira Medeiros",
     resumo:
-      " .",
+      "",
     links: [
       {
         rotulo: "GitHub",

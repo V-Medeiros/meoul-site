@@ -31,7 +31,7 @@ export function ListaAbout({ about }: ListaAboutProps) {
         </div>
 
         <h2>{about.nome}</h2>
-        <p className={styles.jobTitle}>Software Engineer</p>
+        <p className={styles.jobTitle}>Software Engineering Student</p>
         <div className={styles.profileStatus}>
           <span aria-hidden="true" />
           Open to new opportunities
@@ -40,7 +40,13 @@ export function ListaAbout({ about }: ListaAboutProps) {
 
       <section className={styles.aboutCopy}>
         <p className={styles.eyebrow}>ABOUT ME.TXT</p>
-        <h1>Hello! Nice phrase.</h1>
+        <h1 className={styles.eyebrow}>Hi! I’m Victor i...</h1>
+        <ul className={styles.bioList}>
+          <li>build web applications with React and TypeScript,</li>
+          <li>develop back-end systems with Java and PHP,</li>
+          <li>work with databases and embedded systems</li>
+          <li>enjoy turning ideas into practical projects!</li>
+        </ul>
         <p className={styles.summary}>{about.resumo}</p>
 
         <dl className={styles.quickFacts}>
