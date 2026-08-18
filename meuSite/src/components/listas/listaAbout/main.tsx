@@ -72,7 +72,6 @@ export function ListaAbout({ about }: ListaAboutProps) {
                 rel={externo ? "noreferrer" : undefined}
               >
                 {link.rotulo}
-                <span aria-hidden="true"> ↗</span>
               </a>
             );
           })}
