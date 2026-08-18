@@ -55,8 +55,13 @@
   background: var(--blue);
   border: 1px solid var(--navy);
   font-size: 12px;
+  transition: transform 0.2s ease;
 }
+.tecnologias li:hover {
+  box-shadow: 3px 3px 0 #143a62;
+  transform: translate(-3px, -2px);
 
+}
 .links {
   display: flex;
   flex-wrap: wrap;
