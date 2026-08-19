@@ -13,6 +13,9 @@
     inset -2px -2px 0 #777b7b,
     8px 8px 0 rgba(20, 47, 65, 0.28);
   z-index: 1000;
+
+
+  animation: windowOpen 220ms ease-out;
 }
 
 .maximized {
@@ -163,4 +166,17 @@
 
 .windowFooter {
   flex-shrink: 0;
+}
+
+
+@keyframes windowOpen {
+  from {
+    opacity: 0;
+    transform: translateY(2rem) translateX(-2rem) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
