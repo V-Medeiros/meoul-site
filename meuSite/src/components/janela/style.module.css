@@ -15,7 +15,7 @@
   z-index: 1000;
 
 
-  animation: windowOpen 220ms ease-out;
+  animation: windowOpen 180ms ease-out;
 }
 
 .maximized {
