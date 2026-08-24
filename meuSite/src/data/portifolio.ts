@@ -17,7 +17,7 @@ export type Projeto = {
 
 export const portfolio = {
   about: {
-    titulo: "Software Developer",
+    titulo: "Web Developer",
     nome: "Victor de Oliveira Medeiros",
     resumo:
       "",

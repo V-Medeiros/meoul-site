@@ -31,7 +31,7 @@ const janelasIniciais: Stage[] = [
   {
     id: "about",
     nome: "About",
-    estado: "fechada",
+    estado: "aberta",
   },
   {
     id: "contact",

@@ -12,8 +12,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="about"
         nome="about"
-        top={150}
-        left={1500}
+        top={228}
+        left={632}
         width="clamp(22rem, 55vw, 41.25rem)"
         height="clamp(20rem, 60dvh, 30rem)"
         descricao={<ListaAbout about={portfolio.about} />}
@@ -21,8 +21,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="projects"
         nome="Projects"
-        top={600}
-        left={1600}
+        top={45}
+        left={143}
         width="clamp(20rem, 35vw, 26rem)"
         height="clamp(22rem, 60dvh, 38.5rem)"
         descricao={<ListaProjetos projetos={portfolio.projects} />}
@@ -30,8 +30,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="contact"
         nome="Contact"
-        top={500}
-        left={890}
+        top={638}
+        left={48}
         width="clamp(20rem, 35vw, 26.25rem)"
         height="clamp(16rem, 35dvh, 17.5rem)"
         descricao={<ListaContact contact={portfolio.contact} />} 
@@ -39,8 +39,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="tools"
         nome="Tools"
-        top={140}
-        left={200}
+        top={568}
+        left={1461}
         width="clamp(20rem, 40vw, 30rem)"
         height="clamp(18rem, 45dvh, 23.4375rem)"
         descricao={<ListaTools tools={portfolio.tools} />}
@@ -48,8 +48,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="resume"
         nome="Resume"
-        top={70}
-        left={700}
+        top={65}
+        left={1349}
         width="clamp(22rem, 60vw, 46.25rem)"
         height="clamp(20rem, 55dvh, 27.5rem)"
         descricao={<ListaResume resume={portfolio.resume} />} 
