@@ -47,7 +47,6 @@ export function ListaAbout({ about }: ListaAboutProps) {
         <h1 className={styles.eyebrow}>Hi! I’m Victor i...</h1>
         <ul className={styles.bioList}>
           <li>build web applications and back-end systems,</li>
-          <li>design reliable and scalable software systems,</li>
           <li>work with databases and embedded systems, and</li>
           <li>enjoy turning ideas into real projects.</li>
         </ul>
