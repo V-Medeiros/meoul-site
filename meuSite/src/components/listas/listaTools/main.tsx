@@ -10,6 +10,13 @@ type ListaToolsProps = {
   tools: Tools;
 };
 
+function tocarNota(nota: string) {
+  const audio = new Audio(`caminho/${nota}.mp3`)
+  audio.play()
+  tocarNota(/* x */"");
+
+}
+
 export function ListaTools({ tools }: ListaToolsProps) {
   return (
     <div className={styles.lista}>

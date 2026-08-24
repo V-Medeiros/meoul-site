@@ -9,12 +9,7 @@ export function TaskBar() {
   const [somAtivo, setSomAtivo] = useState(false)
 
 
-  function tocarNota(nota: string){
-    const audio = new Audio(/* caminho ${nota} */)
-    audio.play()
-    tocarNota(/* x */"");
 
-  }
 
   async function alternarSom() {
     const audio = audioRef.current;
