@@ -65,7 +65,10 @@
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "education experience"
+    "stack stack";
   gap: 12px;
   padding: 20px 22px;
 }
@@ -75,6 +78,19 @@
   background: #fffdf0;
   border: 2px solid;
   border-color: #fff #8b9290 #8b9290 #fff;
+  text-align: center;
+}
+
+.education {
+  grid-area: education;
+}
+
+.stackSection {
+  grid-area: stack;
+}
+
+.experience {
+  grid-area: experience;
 }
 
 .section h2 {
@@ -143,11 +159,46 @@
 }
 
 .skills li {
+  display: flex;
   padding: 3px 6px;
+  align-items: center;
+  gap: 5px;
   color: #fff;
   background: var(--blue);
   border: 1px solid var(--navy);
   font-size: 11px;
+}
+
+.currentStack {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.currentStack li {
+  width: 100%;
+  min-height: 34px;
+  padding: 6px 9px;
+  color: var(--navy);
+  background: #e8f1ee;
+  border: 2px solid;
+  border-color: #fff #718381 #718381 #fff;
+  font-weight: 700;
+  box-shadow: 1px 1px 0 rgba(20, 47, 65, 0.2);
+  text-align: left;
+}
+
+.currentStack img {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.currentStack span {
+  color: inherit;
+  line-height: 1;
 }
 
 @container (min-width: 1000px) {
@@ -173,6 +224,8 @@
   }
 
   .content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: "education stack experience";
     padding: 34px 28px;
     gap: 18px;
   }
@@ -201,6 +254,21 @@
   .skills li {
     padding: 5px 8px;
     font-size: 12px;
+  }
+
+  .currentStack img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .currentStack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .currentStack li {
+    min-height: 42px;
+    padding: 7px 10px;
   }
 }
 
