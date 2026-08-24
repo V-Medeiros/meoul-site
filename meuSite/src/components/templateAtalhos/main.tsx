@@ -6,6 +6,28 @@ import { ListaTools } from "../listas/listaTools/main";
 import { ListaAbout } from "../listas/listaAbout/main";
 import { ListaContact } from "../listas/listaContact/main";
 
+const resumeBeta = {
+  nome: portfolio.about.nome,
+  titulo: "Software Engineering Student / Web Developer",
+  resumo:
+    "Developer focused on building web applications, back-end systems, databases, and embedded solutions.",
+  formacao: "Software Engineering",
+  competencias: [
+    "Java",
+    "TypeScript",
+    "React",
+    "Spring Boot",
+    "SQL",
+    "Git",
+  ],
+  projetos: portfolio.projects.slice(0, 3).map(({ nome, descricao }) => ({
+    nome,
+    descricao,
+  })),
+  email: "victorme2806@gmail.com",
+  github: "https://github.com/V-Medeiros",
+};
+
 export function TemplateAtalhos() {
   return (
     <>
@@ -52,7 +74,7 @@ export function TemplateAtalhos() {
         left={1349}
         width="clamp(22rem, 60vw, 46.25rem)"
         height="clamp(20rem, 55dvh, 27.5rem)"
-        descricao={<ListaResume resume={portfolio.resume} />} 
+        descricao={<ListaResume resume={resumeBeta} />}
       />
     </>
   );
