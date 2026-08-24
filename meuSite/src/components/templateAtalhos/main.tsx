@@ -9,16 +9,17 @@ import { ListaContact } from "../listas/listaContact/main";
 const resumeBeta = {
   nome: portfolio.about.nome,
   titulo: "Software Engineering Student / Web Developer",
+  localizacao: "Curitiba, Brazil",
   resumo:
     "Developer focused on building web applications, back-end systems, databases, and embedded solutions.",
   formacao: "Software Engineering",
   competencias: [
-    "Java",
     "TypeScript",
     "React",
+    "Tailwind CSS",
     "Spring Boot",
-    "SQL",
-    "Git",
+    "PostgreSQL",
+    "Docker",
   ],
   projetos: portfolio.projects.slice(0, 3).map(({ nome, descricao }) => ({
     nome,

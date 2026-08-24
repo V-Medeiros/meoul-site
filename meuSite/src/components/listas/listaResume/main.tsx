@@ -8,6 +8,7 @@ type ResumeProject = {
 type Resume = {
   nome: string;
   titulo: string;
+  localizacao: string;
   resumo: string;
   formacao: string;
   competencias: string[];
@@ -28,6 +29,7 @@ export function ListaResume({ resume }: ListaResumeProps) {
           <span className={styles.badge}>BETA</span>
           <h1>{resume.nome}</h1>
           <p>{resume.titulo}</p>
+          <p className={styles.location}>{resume.localizacao}</p>
         </div>
         <span className={styles.fileName}>RESUME.TXT</span>
       </header>
@@ -60,7 +62,7 @@ export function ListaResume({ resume }: ListaResumeProps) {
           </section>
 
           <section className={styles.section}>
-            <h2>Skills</h2>
+            <h2>Current stack</h2>
             <ul className={styles.skills}>
               {resume.competencias.map((competencia) => (
                 <li key={competencia}>{competencia}</li>

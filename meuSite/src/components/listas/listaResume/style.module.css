@@ -30,6 +30,12 @@
   font-size: 12px;
 }
 
+.header .location {
+  margin-top: 4px;
+  color: #9fd4ee;
+  font-size: 10px;
+}
+
 .badge {
   padding: 2px 6px;
   color: #173c6c;
