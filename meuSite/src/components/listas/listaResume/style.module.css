@@ -4,17 +4,21 @@
   background: var(--paper);
   border: 2px solid;
   border-color: #777b7b #fff #fff #777b7b;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 13px;
 }
 
 .header {
+  position: relative;
   display: flex;
   padding: 18px 22px;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   color: #fff;
   background: var(--navy);
   border-bottom: 4px solid #2f6da6;
+  text-align: center;
 }
 
 .header h1 {
@@ -27,13 +31,13 @@
 .header p {
   margin: 0;
   color: #cde4f4;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .header .location {
   margin-top: 4px;
   color: #9fd4ee;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .badge {
@@ -47,6 +51,9 @@
 }
 
 .fileName {
+  position: absolute;
+  top: 18px;
+  right: 22px;
   color: #9fd4ee;
   font-size: 10px;
   letter-spacing: 1px;
@@ -54,20 +61,16 @@
 
 .content {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(190px, 1fr);
-}
-
-.mainColumn,
-.sideColumn {
-  display: grid;
-  align-content: start;
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
   padding: 20px 22px;
 }
 
-.sideColumn {
-  background: #dfe9e5;
-  border-left: 2px solid #9aa9a8;
+.section {
+  padding: 13px;
+  background: #fffdf0;
+  border: 2px solid;
+  border-color: #fff #8b9290 #8b9290 #fff;
 }
 
 .section h2 {
@@ -75,7 +78,7 @@
   padding-bottom: 5px;
   color: var(--navy);
   border-bottom: 1px dashed #819493;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
 }
@@ -84,7 +87,7 @@
 .section strong,
 .section span,
 .section a {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -123,7 +126,7 @@
 .project h3 {
   margin: 0 0 4px;
   color: var(--navy);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .skills {
@@ -140,7 +143,7 @@
   color: #fff;
   background: var(--blue);
   border: 1px solid var(--navy);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 @media (max-width: 620px) {
@@ -148,8 +151,7 @@
     display: block;
   }
 
-  .sideColumn {
-    border-top: 2px solid #9aa9a8;
-    border-left: 0;
+  .section + .section {
+    margin-top: 12px;
   }
 }

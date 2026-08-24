@@ -13,6 +13,7 @@ const resumeBeta = {
   resumo:
     "Developer focused on building web applications, back-end systems, databases, and embedded solutions.",
   formacao: "Software Engineering",
+  ferramentas: portfolio.tools.ferramentas,
   competencias: [
     "TypeScript",
     "React",
