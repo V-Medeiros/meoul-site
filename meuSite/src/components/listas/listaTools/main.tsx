@@ -4,18 +4,21 @@ type Tools = {
   linguagens: string[];
   frameworks: string[];
   ferramentas: string[];
-};
+};4
 
 type ListaToolsProps = {
   tools: Tools;
 };
-
+/* 
 function tocarNota(nota: string) {
   const audio = new Audio(`caminho/${nota}.mp3`)
   audio.play()
-  tocarNota(/* x */"");
 
 }
+  tocarNota("");
+  tocarNota("");
+  tocarNota("");
+*/
 
 export function ListaTools({ tools }: ListaToolsProps) {
   return (
