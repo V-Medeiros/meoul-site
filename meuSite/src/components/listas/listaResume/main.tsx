@@ -34,21 +34,17 @@ export function ListaResume({ resume }: ListaResumeProps) {
         </section>
 
         <section className={styles.section}>
-          <h2>Tools &amp; skills</h2>
-          <ul className={styles.skills}>
-            {resume.ferramentas.map((ferramenta) => (
-              <li key={ferramenta}>{ferramenta}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className={styles.section}>
           <h2>Current stack</h2>
           <ul className={styles.skills}>
             {resume.competencias.map((competencia) => (
               <li key={competencia}>{competencia}</li>
             ))}
           </ul>
+        </section>
+        
+        <section className={styles.section}>
+          <h2>Work Experience</h2>
+          <span>None</span>
         </section>
       </div>
     </article>
