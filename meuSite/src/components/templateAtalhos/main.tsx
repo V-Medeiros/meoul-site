@@ -34,13 +34,16 @@ export function TemplateAtalhos() {
   return (
     <>
       <Atalho
-        id="about"
-        nome="about"
-        top={228}
-        left={632}
-        width="clamp(22rem, 55vw, 41.25rem)"
-        height="clamp(20rem, 60dvh, 30rem)"
-        descricao={<ListaAbout about={portfolio.about} />}
+        id="bin"
+        nome="Bin"
+        top={180}
+        left={380}
+        width="clamp(18rem, 32vw, 24rem)"
+        height="clamp(12rem, 28dvh, 16rem)"
+        iconeFechado="/windows-xp-icons/Bin.png"
+        iconeAberto="/windows-xp-icons/Bin.png"
+        tamanhoIcone="175%"
+        descricao={<p>Empty</p>}
       />
       <Atalho
         id="projects"
@@ -77,6 +80,15 @@ export function TemplateAtalhos() {
         width="clamp(22rem, 60vw, 46.25rem)"
         height="clamp(20rem, 55dvh, 27.5rem)"
         descricao={<ListaResume resume={resumeBeta} />}
+      />
+      <Atalho
+        id="about"
+        nome="about"
+        top={228}
+        left={632}
+        width="clamp(22rem, 55vw, 41.25rem)"
+        height="clamp(20rem, 60dvh, 30rem)"
+        descricao={<ListaAbout about={portfolio.about} />}
       />
     </>
   );

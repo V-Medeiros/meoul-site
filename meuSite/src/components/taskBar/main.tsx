@@ -3,30 +3,10 @@ import { useJanelas } from "../../hooks/useJanelas";
 import styles from "./style.module.css";
 
 export function TaskBar() {
-  const { janelas, alternarPelaTaskbar } = useJanelas();
+  const { janelas, abrir, alternarPelaTaskbar } = useJanelas();
   const [horario, setHorario] = useState(() => new Date());
-  const audioRef = useRef<HTMLAudioElement>(null)
-  const [somAtivo, setSomAtivo] = useState(false)
-
-
-
-
-  async function alternarSom() {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (somAtivo) {
-      audio.pause();
-      setSomAtivo(false);
-    }
-
-    else {
-      await audio.play();
-      setSomAtivo(true);
-    }
-  }
-
-
+  const [menuAberto, setMenuAberto] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => setHorario(new Date()), 30_000);
@@ -34,20 +14,75 @@ export function TaskBar() {
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    function fecharMenu(event: PointerEvent) {
+      if (!menuRef.current?.contains(event.target as Node)) {
+        setMenuAberto(false);
+      }
+    }
+
+    function fecharComEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setMenuAberto(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", fecharMenu);
+    document.addEventListener("keydown", fecharComEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", fecharMenu);
+      document.removeEventListener("keydown", fecharComEscape);
+    };
+  }, []);
+
+  function abrirPeloMenu(id: string, nome: string) {
+    abrir(id, nome);
+    setMenuAberto(false);
+  }
+
   const janelasAtivas = janelas.filter((janela) => janela.estado !== "fechada");
 
-  return (<>
-    <audio
-      ref={audioRef}
-      src="/sounds/hey.mp3"
-      preload="metadata"
-      onEnded={() => setSomAtivo(false)}
-    />
+  return (
+    <>
     <nav className={styles.taskbar} data-taskbar>
-      <button className={styles.menuButton} onClick={alternarSom} type="button">
-        <span>Hey</span>
-        {/* ao clicar no icone meu abrir uma section com... agent ou arquivos normais e x modo */}
-      </button>
+      <div className={styles.startMenuArea} ref={menuRef}>
+        {menuAberto && (
+          <section className={styles.startMenu} id="start-menu" aria-label="Hey menu">
+            <div className={styles.startMenuItems}>
+              {janelas.map((janela) => (
+                <button
+                  key={janela.id}
+                  className={styles.startMenuItem}
+                  type="button"
+                  onClick={() => abrirPeloMenu(janela.id, janela.nome)}
+                >
+                  <img
+                    className={janela.id === "bin" ? styles.binIcon : undefined}
+                    src={
+                      janela.id === "bin"
+                        ? "/windows-xp-icons/Bin.png"
+                        : "/windows-xp-icons/Folder%20Closed.png"
+                    }
+                    alt=""
+                  />
+                  <span>{janela.nome}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <button
+          className={`${styles.menuButton} ${menuAberto ? styles.active : ""}`}
+          onClick={() => setMenuAberto((aberto) => !aberto)}
+          type="button"
+          aria-expanded={menuAberto}
+          aria-controls="start-menu"
+        >
+          <span>Hey</span>
+        </button>
+      </div>
 
       <div className={styles.separator} />
 
@@ -64,7 +99,11 @@ export function TaskBar() {
             >
               <img
                 className={styles.taskIcon}
-                src={`/windows-xp-icons/Folder%20${estaAberta ? "Opened" : "Closed"}.png`}
+                src={
+                  janela.id === "bin"
+                    ? "/windows-xp-icons/Bin.png"
+                    : `/windows-xp-icons/Folder%20${estaAberta ? "Opened" : "Closed"}.png`
+                }
                 alt=""
               />
               <span className={styles.taskLabel}>{janela.nome}</span>
@@ -82,6 +121,6 @@ export function TaskBar() {
         </time>
       </div>
     </nav>
-  </>
+    </>
   );
 }

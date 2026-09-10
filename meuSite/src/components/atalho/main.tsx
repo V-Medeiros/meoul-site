@@ -11,6 +11,9 @@ type AtalhoProps = {
   left: number;
   width: CSSProperties["width"];
   height: CSSProperties["height"];
+  iconeFechado?: string;
+  iconeAberto?: string;
+  tamanhoIcone?: CSSProperties["backgroundSize"];
 };
 
 export function Atalho({
@@ -21,6 +24,9 @@ export function Atalho({
   width,
   height,
   descricao,
+  iconeFechado,
+  iconeAberto,
+  tamanhoIcone,
 }: AtalhoProps) {
   const { janelas, abrir, fechar, minimizar } = useJanelas();
   const janela = janelas.find((janelaAtual) => janelaAtual.id === id);
@@ -37,8 +43,17 @@ export function Atalho({
         className={
           janela.estado !== "fechada" ? styles.circleIcon : styles.icon
         }
+        style={{
+          backgroundImage: `url("${
+            janela.estado !== "fechada"
+              ? iconeAberto ?? "/windows-xp-icons/Folder Opened.png"
+              : iconeFechado ?? "/windows-xp-icons/Folder Closed.png"
+          }")`,
+          backgroundSize: tamanhoIcone,
+        }}
         onClick={() => abrir(id, nome)}
         type="button"
+        aria-label={`Abrir ${nome}`}
       />
 
       <p>{nome}</p>

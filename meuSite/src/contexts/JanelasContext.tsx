@@ -48,6 +48,11 @@ const janelasIniciais: Stage[] = [
     nome: "Curriculo",
     estado: "fechada",
   },
+  {
+    id: "bin",
+    nome: "Bin",
+    estado: "fechada",
+  },
 ];
 
 function janelasReducer(
