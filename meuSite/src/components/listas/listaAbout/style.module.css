@@ -22,19 +22,6 @@
   height: 100%;
 }
 
-.profileBadge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 4px 7px;
-  color: #153757;
-  background: #6fee64;
-  border: 2px solid #173955;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
 .avatarFrame {
   width: 140px;
   height: 158px;
@@ -44,14 +31,6 @@
   border: 4px solid #143a62;
   box-shadow: 5px 5px 0 #143a62;
   border-radius: 5%;
-  transition: transform 0.2s ease;
-
-}
-
-.avatarFrame:hover {
-  box-shadow: 8px 8px 0 #143a62;
-  transform: translate(-3px, -2px);
-
 }
 
 .avatar {

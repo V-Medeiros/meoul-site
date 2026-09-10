@@ -20,8 +20,6 @@ export function ListaAbout({ about }: ListaAboutProps) {
   return (
     <article className={styles.aboutLayout}>
       <aside className={styles.profileCard}>
-        <span className={styles.profileBadge}>AVAILABLE</span>
-
         <div className={styles.avatarFrame}>
           <img
             className={styles.avatar}
