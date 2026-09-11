@@ -83,7 +83,7 @@ export function TemplateAtalhos() {
       />
       <Atalho
         id="about"
-        nome="about"
+        nome="about me"
         top={228}
         left={632}
         width="clamp(22rem, 55vw, 41.25rem)"
