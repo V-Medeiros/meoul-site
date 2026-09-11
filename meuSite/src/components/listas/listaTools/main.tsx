@@ -10,6 +10,7 @@ type ListaToolsProps = {
   tools: Tools;
 };
 /* 
+adicionar nas tools -- crescente ou func crescente com while
 function tocarNota(nota: string) {
   const audio = new Audio(`caminho/${nota}.mp3`)
   audio.play()
