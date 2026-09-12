@@ -1,8 +1,0 @@
-{
-    "commentTranslate.targetLanguage": "pt",
-    "commentTranslate.source": "Bing",
-    "commentTranslate.hover.enabled": true,
-    "commentTranslate.hover.content": true,
-    "commentTranslate.hover.nearShow": true,
-    "editor.hover.sticky": true
-}
