@@ -26,9 +26,9 @@
 
 .titleBar {
   display: flex;
-  min-height: 20px;
+  min-height: 26px;
   margin: 2px 2px 0;
-  padding: 2px 2px 2px 4px;
+  padding: 2px 3px 2px 6px;
   align-items: center;
   justify-content: space-between;
   gap: 6px;
@@ -45,7 +45,7 @@
 
 .title {
   overflow: hidden;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -60,8 +60,8 @@
 .controlButton {
   position: relative;
   display: grid;
-  width: 17px;
-  height: 16px;
+  width: 22px;
+  height: 21px;
   padding: 0;
   place-items: center;
   color: #182636;
