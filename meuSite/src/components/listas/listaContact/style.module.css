@@ -1,35 +1,72 @@
-.links {
+.contactList {
   display: grid;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 2rem;
-
+  width: 100%;
+  gap: 12px;
+  padding: 8px;
+  color: var(--ink);
+  font-style: normal;
 }
 
-.links a {
-  padding: 7px 10px;
+.contactCard {
+  display: grid;
+  padding: 12px;
+  align-items: center;
+  gap: 10px 14px;
+  background: var(--paper);
+  border: 2px solid;
+  border-color: #fff #777b7b #777b7b #fff;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.contactCard h2 {
+  margin: 0;
+  padding-bottom: 6px;
+  color: var(--navy);
+  border-bottom: 1px dashed #819493;
+  grid-column: 1 / -1;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.contactCard p {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.contactCard a {
+  min-width: 82px;
+  padding: 6px 10px;
   color: #fff;
   background: var(--blue);
   border: 2px solid;
   border-color: #8fc5e0 #123b63 #123b63 #8fc5e0;
+  box-shadow: 2px 2px 0 #78817c;
   font-size: 13px;
   font-weight: 800;
+  text-align: center;
   text-decoration: none;
-  box-shadow: 2px 2px 0 #78817c;
-}
-.contact {
-  display: flex;
-  flex-direction: column;
-  color: var(--ink);
-  background: var(--paper);
-  border-color: #fff #777b7b #777b7b #fff;
-}
-.links p{
-  margin-bottom: 3rem;
 }
 
-.div{
-  display: grid;
-  align-items: center;
+.contactCard a:active {
+  border-color: #123b63 #8fc5e0 #8fc5e0 #123b63;
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
 
+.contactCard a:focus-visible {
+  outline: 2px solid #f0cf4f;
+  outline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+  .contactCard {
+    grid-template-columns: 1fr;
+  }
+
+  .contactCard a {
+    justify-self: start;
+  }
 }
