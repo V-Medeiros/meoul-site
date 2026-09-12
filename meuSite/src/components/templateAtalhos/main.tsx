@@ -56,6 +56,24 @@ export function TemplateAtalhos() {
         descricao={<p>{traduzir("empty")}</p>}
       />
       <Atalho
+        id="resume"
+        nome={traduzir("resume")}
+        top={228}
+        left={632}
+        width="clamp(22rem, 60vw, 46.25rem)"
+        height="clamp(20rem, 55dvh, 27.5rem)"
+        descricao={<ListaResume resume={resumeTraduzido} />}
+      />
+      <Atalho
+        id="about"
+        nome={traduzir("about")}
+        top={65}
+        left={1349}
+        width="clamp(22rem, 55vw, 41.25rem)"
+        height="clamp(20rem, 60dvh, 30rem)"
+        descricao={<ListaAbout about={portfolio.about} />}
+      />
+      <Atalho
         id="projects"
         nome={traduzir("projects")}
         top={45}
@@ -82,32 +100,15 @@ export function TemplateAtalhos() {
         height="clamp(18rem, 45dvh, 23.4375rem)"
         descricao={<ListaTools tools={portfolio.tools} />}
       />
-      <Atalho
-        id="resume"
-        nome={traduzir("resume")}
-        top={65}
-        left={1349}
-        width="clamp(22rem, 60vw, 46.25rem)"
-        height="clamp(20rem, 55dvh, 27.5rem)"
-        descricao={<ListaResume resume={resumeTraduzido} />}
-      />
+
       <Atalho
         id="curriculum"
         nome={traduzir("curriculum")}
         top={180}
-        left={520}
+        left={1461}
         width="clamp(18rem, 32vw, 24rem)"
         height="clamp(12rem, 28dvh, 16rem)"
         descricao={<ListaCurriculo />}
-      />
-      <Atalho
-        id="about"
-        nome={traduzir("about")}
-        top={228}
-        left={632}
-        width="clamp(22rem, 55vw, 41.25rem)"
-        height="clamp(20rem, 60dvh, 30rem)"
-        descricao={<ListaAbout about={portfolio.about} />}
       />
     </>
   );
