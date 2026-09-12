@@ -83,7 +83,6 @@ export function TaskBar() {
           aria-expanded={menuAberto}
           aria-controls="start-menu"
         >
-          <span className={styles.windowsLogo} aria-hidden="true" />
           <span>Start</span>
         </button>
       </div>

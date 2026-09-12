@@ -129,16 +129,6 @@
 
 .startMenuRail span { color: #fff; }
 
-.windowsLogo {
-  width: 26px;
-  height: 23px;
-  background:
-    linear-gradient(90deg, #f00 0 45%, transparent 45% 55%, #00f 55%) 0 0 / 100% 45%,
-    linear-gradient(90deg, #0a0 0 45%, transparent 45% 55%, #fc0 55%) 0 100% / 100% 45%;
-  background-repeat: no-repeat;
-  transform: skewY(-8deg);
-}
-
 .menuButton:active,
 .taskButton:active,
 .active {
