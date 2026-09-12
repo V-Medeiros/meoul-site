@@ -26,7 +26,7 @@ export function ListaAbout({ about }: ListaAboutProps) {
         <div className={styles.avatarFrame}>
           <img
             className={styles.avatar}
-            src="/dasilva.png"
+            src="/Sorrindobranco.png"
             alt={`${traduzir("about")}: ${about.nome}`}
           />
         </div>

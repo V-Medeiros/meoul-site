@@ -21,7 +21,7 @@ export const textosEn = {
   startMenu: "Start menu",
   switchLanguage: "Mudar para português",
   aboutFile: "ABOUT ME.TXT",
-  greeting: "Hi! I’m Victor...",
+  greeting: "Hi! I'm Victor i...",
   job: "Software Engineering Student",
   focus: "Focus",
   focusValue: "Full-stack development",
