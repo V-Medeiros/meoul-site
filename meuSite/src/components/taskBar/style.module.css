@@ -5,23 +5,23 @@
   z-index: 2000;
   display: flex;
   width: 100%;
-  height: 52px;
+  height: 3.35rem;
   margin: 0;
-  padding: 3px;
+  padding: 0.25rem 0.3rem;
   align-items: center;
-  gap: 5px;
+  gap: 0.3rem;
   color: #000;
   background: #c0c0c0;
   border-top: 2px solid #fff;
   box-shadow: 0 -1px 0 #808080;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .menuButton,
 .taskButton {
-  height: 44px;
-  padding: 5px 10px;
+  height: 2.65rem;
+  padding: 0.3rem 0.65rem;
   color: #000;
   background: #c0c0c0;
   border: 2px solid;
@@ -37,7 +37,7 @@
 .menuButton {
   display: flex;
   flex: 0 0 auto;
-  min-width: 92px;
+  min-width: 5.4rem;
   align-items: center;
   justify-content: center;
   font-weight: 700;
@@ -54,8 +54,8 @@
   bottom: calc(100% + 0.25rem);
   z-index: 2100;
   display: grid;
-  width: min(260px, calc(100vw - 4px));
-  min-height: 310px;
+  width: min(20rem, calc(100vw - 0.5rem));
+  min-height: 23rem;
   padding: 3px;
   background: #c0c0c0;
   border: 2px solid;
@@ -67,21 +67,21 @@
 
 .startMenuItems {
   display: flex;
-  padding: 2px;
+  padding: 0.35rem;
   margin-left: 24px;
   flex-direction: column;
 }
 
 .startMenuItem {
   display: grid;
-  min-height: 42px;
-  padding: 4px 6px;
+  min-height: 3.45rem;
+  padding: 0.35rem 0.55rem;
   align-items: center;
-  gap: 8px;
+  gap: 0.65rem;
   color: #000;
   background: transparent;
   border: 0;
-  grid-template-columns: 32px 1fr;
+  grid-template-columns: 2.4rem 1fr;
   font: inherit;
   text-align: left;
   cursor: pointer;
@@ -95,8 +95,8 @@
 }
 
 .startMenuItem img {
-  width: 32px;
-  height: 32px;
+  width: 2.25rem;
+  height: 2.25rem;
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -119,19 +119,17 @@
   width: 24px;
   padding: 5px 3px;
   align-items: center;
-  color: #c0c0c0;
-  background: #808080;
+  color: #fff;
+  background: #000080;
   font-size: 15px;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
 
-.startMenuRail span { color: #fff; }
-
 .menuButton:active,
 .taskButton:active,
 .active {
-  padding: 6px 9px 4px 11px;
+  padding: calc(0.3rem + 1px) calc(0.65rem - 1px) calc(0.3rem - 1px) calc(0.65rem + 1px);
   background-color: #b8b8b8;
   border-color: #000 #fff #fff #000;
   box-shadow:
@@ -163,8 +161,8 @@
 
 .taskButton {
   display: flex;
-  min-width: 120px;
-  max-width: 160px;
+  min-width: 11rem;
+  max-width: 15rem;
   align-items: center;
   gap: 0.4rem;
   overflow: hidden;
@@ -173,8 +171,8 @@
 }
 
 .taskIcon {
-  width: 28px;
-  height: 28px;
+  width: 1.45rem;
+  height: 1.45rem;
   flex: 0 0 auto;
   object-fit: contain;
   image-rendering: pixelated;
@@ -190,9 +188,9 @@
 .clock {
   display: flex;
   flex: 0 0 auto;
-  min-width: 84px;
-  height: 44px;
-  padding: 0 10px;
+  min-width: 5.2rem;
+  height: 2.65rem;
+  padding: 0 0.55rem;
   align-items: center;
   justify-content: center;
   background: #c0c0c0;

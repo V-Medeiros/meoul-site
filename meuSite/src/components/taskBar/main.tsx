@@ -50,7 +50,7 @@ export function TaskBar() {
         {menuAberto && (
           <section className={styles.startMenu} id="start-menu" aria-label="Start menu">
             <div className={styles.startMenuRail} aria-hidden="true">
-              <strong>my.portifolio</strong>
+              <span>my.portifolio</span>
             </div>
             <div className={styles.startMenuItems}>
               {janelas.map((janela) => (
