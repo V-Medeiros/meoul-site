@@ -1,4 +1,5 @@
 import styles from "./style.module.css";
+import { useIdioma } from "../../../hooks/useIdioma";
 
 const deviconSlugs: Record<string, string> = {
   TypeScript: "typescript",
@@ -23,6 +24,8 @@ type ListaResumeProps = {
 };
 
 export function ListaResume({ resume }: ListaResumeProps) {
+  const { traduzir } = useIdioma();
+
   return (
     <article className={styles.resume}>
       <header className={styles.header}>
@@ -31,19 +34,19 @@ export function ListaResume({ resume }: ListaResumeProps) {
           <p>{resume.titulo}</p>
           <p className={styles.location}>{resume.localizacao}</p>
         </div>
-        <span className={styles.fileName}>RESUME.TXT</span>
+        <span className={styles.fileName}>{traduzir("resumeFile")}</span>
       </header>
 
       <div className={styles.content}>
         <section className={`${styles.section} ${styles.education}`}>
-          <h2>Education</h2>
+          <h2>{traduzir("education")}</h2>
           <strong>{resume.formacao}</strong>
           <strong>PUC - PR</strong>
-          <span>2025 - In progress</span>
+          <span>{traduzir("inProgress")}</span>
         </section>
 
         <section className={`${styles.section} ${styles.stackSection}`}>
-          <h2>Current stack</h2>
+          <h2>{traduzir("currentStack")}</h2>
           <ul className={`${styles.skills} ${styles.currentStack}`}>
             {resume.competencias.map((competencia) => {
               const slug = deviconSlugs[competencia];
@@ -65,8 +68,8 @@ export function ListaResume({ resume }: ListaResumeProps) {
         </section>
         
         <section className={`${styles.section} ${styles.experience}`}>
-          <h2>Work Experience</h2>
-          <span>None</span>
+          <h2>{traduzir("workExperience")}</h2>
+          <span>{traduzir("none")}</span>
         </section>
       </div>
     </article>

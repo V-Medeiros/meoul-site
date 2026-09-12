@@ -1,9 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { useJanelas } from "../../hooks/useJanelas";
 import styles from "./style.module.css";
+import { useIdioma } from "../../hooks/useIdioma";
+import type { ChaveTexto } from "../../contexts/idioma-context";
+
+const nomesDasJanelas: Record<string, ChaveTexto> = {
+  projects: "projects",
+  about: "about",
+  contact: "contact",
+  tools: "tools",
+  resume: "resume",
+  bin: "bin",
+};
 
 export function TaskBar() {
   const { janelas, abrir, alternarPelaTaskbar } = useJanelas();
+  const { idioma, alternarIdioma, traduzir } = useIdioma();
   const [horario, setHorario] = useState(() => new Date());
   const [menuAberto, setMenuAberto] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -36,8 +48,13 @@ export function TaskBar() {
     };
   }, []);
 
-  function abrirPeloMenu(id: string, nome: string) {
-    abrir(id, nome);
+  function nomeDaJanela(id: string) {
+    const chave = nomesDasJanelas[id];
+    return chave ? traduzir(chave) : id;
+  }
+
+  function abrirPeloMenu(id: string) {
+    abrir(id, nomeDaJanela(id));
     setMenuAberto(false);
   }
 
@@ -48,7 +65,11 @@ export function TaskBar() {
     <nav className={styles.taskbar} data-taskbar>
       <div className={styles.startMenuArea} ref={menuRef}>
         {menuAberto && (
-          <section className={styles.startMenu} id="start-menu" aria-label="Start menu">
+          <section
+            className={styles.startMenu}
+            id="start-menu"
+            aria-label={traduzir("startMenu")}
+          >
             <div className={styles.startMenuRail} aria-hidden="true">
               <span>my.portifolio</span>
             </div>
@@ -58,7 +79,7 @@ export function TaskBar() {
                   key={janela.id}
                   className={styles.startMenuItem}
                   type="button"
-                  onClick={() => abrirPeloMenu(janela.id, janela.nome)}
+                  onClick={() => abrirPeloMenu(janela.id)}
                 >
                   <img
                     className={janela.id === "bin" ? styles.binIcon : undefined}
@@ -69,7 +90,7 @@ export function TaskBar() {
                     }
                     alt=""
                   />
-                  <span>{janela.nome}</span>
+                  <span>{nomeDaJanela(janela.id)}</span>
                 </button>
               ))}
             </div>
@@ -83,7 +104,7 @@ export function TaskBar() {
           aria-expanded={menuAberto}
           aria-controls="start-menu"
         >
-          <span>Start</span>
+          <span>{traduzir("start")}</span>
         </button>
       </div>
 
@@ -111,15 +132,27 @@ export function TaskBar() {
                 }
                 alt=""
               />
-              <span className={styles.taskLabel}>{janela.nome}</span>
+              <span className={styles.taskLabel}>
+                {nomeDaJanela(janela.id)}
+              </span>
             </button>
           );
         })}
       </div>
 
+      <button
+        className={styles.languageButton}
+        type="button"
+        onClick={alternarIdioma}
+        title={traduzir("switchLanguage")}
+        aria-label={traduzir("switchLanguage")}
+      >
+        {idioma === "en" ? "PT" : "EN"}
+      </button>
+
       <div className={styles.clock}>
         <time dateTime={horario.toISOString()}>
-          {horario.toLocaleTimeString("pt-BR", {
+          {horario.toLocaleTimeString(idioma === "pt" ? "pt-BR" : "en-US", {
             hour: "2-digit",
             minute: "2-digit",
           })}

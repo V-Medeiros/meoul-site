@@ -1,10 +1,12 @@
 import styles from "./style.module.css";
+import { useIdioma } from "../../../hooks/useIdioma";
 
 type Contact = {
   links: LinkContact[];
 };
 
 type LinkContact = {
+  id: "email" | "phone";
   titulo: string;
   acao: string;
   url: string;
@@ -18,6 +20,8 @@ type ListaContactProps = {
 //colocar um href no link do email
 
 export function ListaContact({ contact }: ListaContactProps) {
+  const { traduzir } = useIdioma();
+
   return (
     <address className={styles.contactList}>
       {contact.links.map((link) => {
@@ -25,15 +29,17 @@ export function ListaContact({ contact }: ListaContactProps) {
 
         return (
           <section className={styles.contactCard} key={link.url}>
-            <h2>{link.titulo}</h2>
+            <h2>{traduzir(link.id)}</h2>
             <p>{link.valor}</p>
             <a
               href={link.url}
               target={externo ? "_blank" : undefined}
               rel={externo ? "noreferrer" : undefined}
-              aria-label={`${link.acao}: ${link.valor}`}
+              aria-label={`${traduzir(
+                link.id === "email" ? "sendEmail" : "sendMessage",
+              )}: ${link.valor}`}
             >
-              {link.acao}
+              {traduzir(link.id === "email" ? "sendEmail" : "sendMessage")}
             </a>
           </section>
         );

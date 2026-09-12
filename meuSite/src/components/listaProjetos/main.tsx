@@ -1,17 +1,20 @@
 import type { Projeto } from "../../data/portifolio";
 import styles from "./style.module.css";
+import { useIdioma } from "../../hooks/useIdioma";
 
 type ListaProjetosProps = {
   projetos: Projeto[];
 };
 
 export function ListaProjetos({ projetos }: ListaProjetosProps) {
+  const { idioma, traduzir } = useIdioma();
+
   return (
     <div className={styles.lista}>
       {projetos.map((projeto) => (
         <article className={styles.projeto} key={projeto.nome}>
           <h2>{projeto.nome}</h2>
-          <p>{projeto.descricao}</p>
+          <p>{idioma === "pt" ? projeto.descricaoPt : projeto.descricao}</p>
 
           <ul className={styles.tecnologias}>
             {projeto.tecnologias.map((tecnologia) => (
@@ -24,7 +27,7 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
               <a
                 href={projeto.repositorio}
               >
-                Repository
+                {traduzir("repository")}
               </a>
             )}
 
@@ -32,7 +35,7 @@ export function ListaProjetos({ projetos }: ListaProjetosProps) {
               <a
                 href={projeto.demonstracao}
               >
-                Demo
+                {traduzir("demo")}
               </a>
             )}
           </div>

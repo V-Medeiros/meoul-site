@@ -10,6 +10,7 @@ type Technology = {
 export type Projeto = {
   nome: string;
   descricao: string;
+  descricaoPt: string;
   tecnologias: Technology[];
   repositorio?: string;
   demonstracao?: string;
@@ -42,6 +43,8 @@ export const portfolio = {
       nome: "Vesta",
       descricao:
         "A gamified focus app that turns concentration time into a virtual campfire.",
+      descricaoPt:
+        "Um aplicativo de foco gamificado que transforma o tempo de concentração em uma fogueira virtual.",
       tecnologias: [
         { name: "TypeScript" },
         { name: "Java" },
@@ -55,6 +58,8 @@ export const portfolio = {
       nome: "CampusTrack",
       descricao:
         "A system for managing institutions, spaces, users, maps, and events.",
+      descricaoPt:
+        "Um sistema para gerenciar instituições, espaços, usuários, mapas e eventos.",
       tecnologias: [
         { name: "PHP" },
         { name: "Javascript" },
@@ -68,6 +73,8 @@ export const portfolio = {
       nome: "SPARC",
       descricao:
         "SPARC monitors and manages electrical loads in photovoltaic and off-grid environments.",
+      descricaoPt:
+        "O SPARC monitora e gerencia cargas elétricas em ambientes fotovoltaicos e isolados da rede.",
       tecnologias: [
         { name: "C++" },
         { name: "LitlleFS" },
@@ -77,6 +84,7 @@ export const portfolio = {
     {
       nome: "Rpg game",
       descricao: "A CRUD application for an RPG system with a graphical interface.",
+      descricaoPt: "Uma aplicação CRUD para um sistema de RPG com interface gráfica.",
       tecnologias: [{ name: "Java" }],
       repositorio: "https://github.com/luis-sandri/RPG",
     },
@@ -86,12 +94,14 @@ export const portfolio = {
     links:
     [
       {
+        id: "email" as const,
         titulo: "Email",
         acao: "Send email",
         url: "mailto:victorme2806@gmail.com",
         valor: "victorme2806@gmail.com",
       },
       {
+        id: "phone" as const,
         titulo: "Phone",
         acao: "Send message",
         url: "https://wa.me/5541992899977",

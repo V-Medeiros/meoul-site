@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from "react";
 import { useArraste } from "../../hooks/useArraste";
 import styles from "./style.module.css";
+import { useIdioma } from "../../hooks/useIdioma";
 
 let maiorZIndex = 1000;
 
@@ -22,6 +23,7 @@ type JanelaProps = {
 };
 
 export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}: JanelaProps) {
+  const { traduzir } = useIdioma();
   const { posicao, elementoRef, eventosDeArraste } = useArraste({ top, left });
   const [maximizada, setMaximizada] = useState(false);
   const [zIndex, setZIndex] = useState(proximoZIndex);
@@ -62,12 +64,14 @@ export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}
             <button
               className={styles.controlButton}
               type="button"
+              aria-label={traduzir("minimize")}
               onClick={onMinimize}>
               <span className={styles.minimizeIcon}/>
             </button>
             <button
               className={styles.controlButton}
               type="button"
+              aria-label={traduzir(maximizada ? "restore" : "maximize")}
               onClick={alternarMaximizacao}
             >
               <span className={maximizada ? styles.restoreIcon : styles.maximizeIcon}/>
@@ -75,6 +79,7 @@ export function Janela({top,left,width,height,nome,descricao,onMinimize,onClose}
             <button
               className={`${styles.controlButton} ${styles.closeButton}`}
               type="button"
+              aria-label={traduzir("close")}
               onClick={onClose}>
               <span className={styles.closeIcon} />
             </button>

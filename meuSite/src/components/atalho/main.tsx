@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { useJanelas } from "../../hooks/useJanelas";
 import styles from "./style.module.css";
 import { Janela } from "../janela/main";
+import { useIdioma } from "../../hooks/useIdioma";
 
 type AtalhoProps = {
   id: string;
@@ -28,6 +29,7 @@ export function Atalho({
   iconeAberto,
   tamanhoIcone,
 }: AtalhoProps) {
+  const { traduzir } = useIdioma();
   const { janelas, abrir, fechar, minimizar } = useJanelas();
   const janela = janelas.find((janelaAtual) => janelaAtual.id === id);
 
@@ -53,7 +55,7 @@ export function Atalho({
         }}
         onClick={() => abrir(id, nome)}
         type="button"
-        aria-label={`Abrir ${nome}`}
+        aria-label={`${traduzir("open")} ${nome}`}
       />
 
       <p>{nome}</p>

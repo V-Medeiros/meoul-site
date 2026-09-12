@@ -1,4 +1,5 @@
 import styles from "./style.module.css";
+import { useIdioma } from "../../../hooks/useIdioma";
 
 type LinkAbout = {
   rotulo: string;
@@ -17,6 +18,8 @@ type ListaAboutProps = {
 };
 
 export function ListaAbout({ about }: ListaAboutProps) {
+  const { traduzir } = useIdioma();
+
   return (
     <article className={styles.aboutLayout}>
       <aside className={styles.profileCard}>
@@ -24,41 +27,41 @@ export function ListaAbout({ about }: ListaAboutProps) {
           <img
             className={styles.avatar}
             src="/dasilva.png"
-            alt={`Illustration of ${about.nome}`}
+            alt={`${traduzir("about")}: ${about.nome}`}
           />
         </div>
 
-        <h3 className={styles.jobTitle}>Software Engineering Student</h3>
+        <h3 className={styles.jobTitle}>{traduzir("job")}</h3>
         <div className={styles.focusInfo}>
-          <span>Focus</span>
-          <strong>Full-stack development</strong>
+          <span>{traduzir("focus")}</span>
+          <strong>{traduzir("focusValue")}</strong>
         </div>
 
         <div className={styles.profileStatus}>
           <span aria-hidden="true" />
-          Open to new opportunities
+          {traduzir("availability")}
         </div>
       </aside>
 
       <section className={styles.aboutCopy}>
-        <p className={styles.eyebrow}>ABOUT ME.TXT</p>
-        <h1 className={styles.eyebrow}>Hi! I’m Victor i...</h1>
+        <p className={styles.eyebrow}>{traduzir("aboutFile")}</p>
+        <h1 className={styles.eyebrow}>{traduzir("greeting")}</h1>
         <ul className={styles.bioList}>
-          <li>build web applications and back-end systems,</li>
-          <li>work with databases and embedded systems, and</li>
-          <li>enjoy turning ideas into real projects.</li>
+          <li>{traduzir("bioOne")}</li>
+          <li>{traduzir("bioTwo")}</li>
+          <li>{traduzir("bioThree")}</li>
         </ul>
         <div className={styles.details}>
           <p className={styles.summary}>{about.resumo}</p>
 
           <dl className={styles.quickFacts}>
             <div>
-              <dt>Name</dt>
+              <dt>{traduzir("name")}</dt>
               <dd>{about.nome}</dd>
             </div>
             <div>
-              <dt>Role</dt>
-              <dd>{about.titulo}</dd>
+              <dt>{traduzir("role")}</dt>
+              <dd>{traduzir("softwareDeveloper")}</dd>
             </div>
           </dl>
         </div>

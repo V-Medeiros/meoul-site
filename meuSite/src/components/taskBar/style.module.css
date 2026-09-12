@@ -206,6 +206,38 @@
   white-space: nowrap;
 }
 
+.languageButton {
+  flex: 0 0 auto;
+  min-width: 42px;
+  height: 2.65rem;
+  padding: 0.3rem 0.5rem;
+  color: #000;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #fff #000 #000 #fff;
+  border-radius: 0;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.languageButton:active {
+  padding: calc(0.3rem + 1px) calc(0.5rem - 1px) calc(0.3rem - 1px) calc(0.5rem + 1px);
+  background: #b8b8b8;
+  border-color: #000 #fff #fff #000;
+  box-shadow:
+    inset 1px 1px 0 #808080,
+    inset -1px -1px 0 #dfdfdf;
+}
+
+.languageButton:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: -5px;
+}
+
 @media (max-width: 540px) {
   .taskbar {
     gap: 0.2rem;
@@ -229,5 +261,10 @@
   .clock {
     min-width: 4.2rem;
     padding-inline: 0.35rem;
+  }
+
+  .languageButton {
+    min-width: 36px;
+    padding-inline: 0.3rem;
   }
 }

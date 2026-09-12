@@ -1,10 +1,11 @@
 import styles from "./style.module.css";
+import { useIdioma } from "../../../hooks/useIdioma";
 
 type Tools = {
   linguagens: string[];
   frameworks: string[];
   ferramentas: string[];
-};4
+};
 
 type ListaToolsProps = {
   tools: Tools;
@@ -22,10 +23,12 @@ function tocarNota(nota: string) {
 */
 
 export function ListaTools({ tools }: ListaToolsProps) {
+  const { traduzir } = useIdioma();
+
   return (
     <div className={styles.lista}>
       <section className={styles.grupo}>
-        <h2>Languages</h2>
+        <h2>{traduzir("languages")}</h2>
         <ul className={styles.itens}>
           {tools.linguagens.map((linguagem) => (
             <li key={linguagem}>{linguagem}</li>
@@ -34,7 +37,7 @@ export function ListaTools({ tools }: ListaToolsProps) {
       </section>
 
       <section className={styles.grupo}>
-        <h2>Frameworks</h2>
+        <h2>{traduzir("frameworks")}</h2>
         <ul className={styles.itens}>
           {tools.frameworks.map((framework) => (
             <li key={framework}>{framework}</li>
@@ -43,7 +46,7 @@ export function ListaTools({ tools }: ListaToolsProps) {
       </section>
 
       <section className={styles.grupo}>
-        <h2>Tools</h2>
+        <h2>{traduzir("tools")}</h2>
         <ul className={styles.itens}>
           {tools.ferramentas.map((ferramenta) => (
             <li key={ferramenta}>{ferramenta}</li>
