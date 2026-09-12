@@ -5,23 +5,23 @@
   z-index: 2000;
   display: flex;
   width: 100%;
-  height: 30px;
+  height: 52px;
   margin: 0;
-  padding: 2px;
+  padding: 3px;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
   color: #000;
   background: #c0c0c0;
   border-top: 2px solid #fff;
   box-shadow: 0 -1px 0 #808080;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .menuButton,
 .taskButton {
-  height: 26px;
-  padding: 2px 6px;
+  height: 44px;
+  padding: 5px 10px;
   color: #000;
   background: #c0c0c0;
   border: 2px solid;
@@ -37,7 +37,7 @@
 .menuButton {
   display: flex;
   flex: 0 0 auto;
-  min-width: 62px;
+  min-width: 92px;
   align-items: center;
   justify-content: flex-start;
   gap: 4px;
@@ -130,8 +130,8 @@
 .startMenuRail span { color: #fff; }
 
 .windowsLogo {
-  width: 16px;
-  height: 14px;
+  width: 26px;
+  height: 23px;
   background:
     linear-gradient(90deg, #f00 0 45%, transparent 45% 55%, #00f 55%) 0 0 / 100% 45%,
     linear-gradient(90deg, #0a0 0 45%, transparent 45% 55%, #fc0 55%) 0 100% / 100% 45%;
@@ -142,7 +142,7 @@
 .menuButton:active,
 .taskButton:active,
 .active {
-  padding: 3px 5px 1px 7px;
+  padding: 6px 9px 4px 11px;
   background-color: #b8b8b8;
   border-color: #000 #fff #fff #000;
   box-shadow:
@@ -184,8 +184,8 @@
 }
 
 .taskIcon {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   flex: 0 0 auto;
   object-fit: contain;
   image-rendering: pixelated;
@@ -201,9 +201,9 @@
 .clock {
   display: flex;
   flex: 0 0 auto;
-  min-width: 64px;
-  height: 26px;
-  padding: 0 6px;
+  min-width: 84px;
+  height: 44px;
+  padding: 0 10px;
   align-items: center;
   justify-content: center;
   background: #c0c0c0;
