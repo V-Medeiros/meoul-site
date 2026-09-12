@@ -1,26 +1,11 @@
-import {createContext,type ReactNode,useReducer} from "react";
-
-export type EstadoJanela = "fechada" | "aberta" | "minimizada";
-
-export type Stage = {
-  id: string;
-  nome: string;
-  estado: EstadoJanela;
-};
+import { type ReactNode, useReducer } from "react";
+import { JanelasContext, type Stage } from "./janelas-context";
 
 type AcaoJanela =
   | { type: "ABRIR"; id: string; nome: string }
   | { type: "FECHAR"; id: string }
   | { type: "MINIMIZAR"; id: string }
   | { type: "ALTERNAR_TASKBAR"; id: string };
-
-export type JanelasContextType = {
-  janelas: Stage[];
-  abrir: (id: string, nome: string) => void;
-  fechar: (id: string) => void;
-  minimizar: (id: string) => void;
-  alternarPelaTaskbar: (id: string) => void;
-};
 
 const janelasIniciais: Stage[] = [
   {
@@ -46,6 +31,11 @@ const janelasIniciais: Stage[] = [
   {
     id: "resume",
     nome: "Curriculo",
+    estado: "fechada",
+  },
+  {
+    id: "curriculum",
+    nome: "Currículo",
     estado: "fechada",
   },
   {
@@ -83,10 +73,6 @@ function janelasReducer(
     }
   });
 }
-// Exportado para o hook useJanelas, que fica em um arquivo separado.
-export const JanelasContext =
-  createContext<JanelasContextType | null>(null);
-
 type JanelasProviderProps = {
   children: ReactNode;
 };

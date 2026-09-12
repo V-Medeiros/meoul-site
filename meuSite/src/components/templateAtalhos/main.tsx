@@ -6,6 +6,7 @@ import { ListaTools } from "../listas/listaTools/main";
 import { ListaAbout } from "../listas/listaAbout/main";
 import { ListaContact } from "../listas/listaContact/main";
 import { useIdioma } from "../../hooks/useIdioma";
+import { ListaCurriculo } from "../listas/listaCurriculo/main";
 
 const resumeBeta = {
   nome: portfolio.about.nome,
@@ -89,6 +90,15 @@ export function TemplateAtalhos() {
         width="clamp(22rem, 60vw, 46.25rem)"
         height="clamp(20rem, 55dvh, 27.5rem)"
         descricao={<ListaResume resume={resumeTraduzido} />}
+      />
+      <Atalho
+        id="curriculum"
+        nome={traduzir("curriculum")}
+        top={180}
+        left={520}
+        width="clamp(18rem, 32vw, 24rem)"
+        height="clamp(12rem, 28dvh, 16rem)"
+        descricao={<ListaCurriculo />}
       />
       <Atalho
         id="about"

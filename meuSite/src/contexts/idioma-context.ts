@@ -14,6 +14,7 @@ export const textosEn = {
   contact: "Contact",
   tools: "Tools",
   resume: "Resume",
+  curriculum: "CV",
   bin: "Bin",
   empty: "Empty",
   start: "Start",
@@ -53,6 +54,8 @@ export const textosEn = {
   restore: "Restore",
   close: "Close",
   open: "Open",
+  downloadResume: "Download CV",
+  fileComingSoon: "The PDF will be available soon.",
 } as const;
 
 export type ChaveTexto = keyof typeof textosEn;
@@ -63,6 +66,7 @@ export const textosPt: Record<ChaveTexto, string> = {
   contact: "Contato",
   tools: "Tecnologias",
   resume: "Currículo",
+  curriculum: "Currículo",
   bin: "Lixeira",
   empty: "Vazia",
   start: "Iniciar",
@@ -102,6 +106,8 @@ export const textosPt: Record<ChaveTexto, string> = {
   restore: "Restaurar",
   close: "Fechar",
   open: "Abrir",
+  downloadResume: "Baixar currículo",
+  fileComingSoon: "O PDF estará disponível em breve.",
 };
 
 export const IdiomaContext = createContext<IdiomaContextType | null>(null);

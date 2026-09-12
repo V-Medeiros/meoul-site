@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { JanelasContext } from "../contexts/JanelasContext";
+import { JanelasContext } from "../contexts/janelas-context";
 
 export function useJanelas() {
   const contexto = useContext(JanelasContext);

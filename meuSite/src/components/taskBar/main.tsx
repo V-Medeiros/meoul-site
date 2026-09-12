@@ -10,6 +10,7 @@ const nomesDasJanelas: Record<string, ChaveTexto> = {
   contact: "contact",
   tools: "tools",
   resume: "resume",
+  curriculum: "curriculum",
   bin: "bin",
 };
 
