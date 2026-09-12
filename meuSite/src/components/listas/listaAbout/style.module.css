@@ -14,9 +14,9 @@
   padding: 20px 10px 2px;
   align-items: center;
   flex-direction: column;
-  color: #000;
-  background: #c0c0c0;
-  border-right: 2px groove #fff;
+  color: #fff;
+  background: var(--navy);
+  border-right: 4px solid #2f6da6;
   text-align: center;
   height: 100%;
 }
@@ -63,7 +63,7 @@
 .profileStatus {
   width: 100%;
   padding-top: 13px;
-  border-top: 2px groove #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   font-size: 12px;
   margin-top: 1.2rem;
 }
@@ -83,12 +83,12 @@
   margin-top: 30px;
   padding-top: 14px;
   gap: 5px;
-  border-top: 2px groove #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   text-align: left;
 }
 
 .focusInfo span {
-  color: #000080;
+  color: #9fd4ee;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
