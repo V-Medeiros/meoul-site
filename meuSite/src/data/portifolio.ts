@@ -102,7 +102,7 @@ export const portfolio = {
       },
       {
         id: "phone" as const,
-        titulo: "Phone",
+        titulo: "WhatsApp",
         acao: "Send message",
         url: "https://wa.me/5541992899977",
         valor: "(41) 99289-9977",
