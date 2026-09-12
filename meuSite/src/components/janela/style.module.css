@@ -14,11 +14,12 @@
     inset -1px -1px 0 #808080;
   z-index: 1000;
 
+  animation: windowOpen 120ms ease-out;
 
 }
 
 .maximized {
-  inset: 0 0 52px 0 !important;
+  inset: 0 0 3.35rem 0 !important;
   width: auto !important;
   height: auto !important;
   border-radius: 0;
@@ -82,6 +83,17 @@
   outline: 2px solid #f0cf4f;
   outline-offset: 1px;
   z-index: 1;
+}
+
+.closeButton:hover {
+  color: #fff;
+  background: #c42b1c;
+  border-color: #e99b92 #70170d #70170d #e99b92;
+}
+
+.closeButton:active {
+  background: #9f2014;
+  border-color: #70170d #e99b92 #e99b92 #70170d;
 }
 
 .minimizeIcon {
@@ -155,4 +167,22 @@
 
 .windowFooter {
   flex-shrink: 0;
+}
+
+@keyframes windowOpen {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.995);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    animation: none;
+  }
 }
