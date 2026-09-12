@@ -178,6 +178,10 @@
   image-rendering: pixelated;
 }
 
+.binTaskIcon {
+  transform: scale(1.55);
+}
+
 .taskLabel {
   min-width: 0;
   overflow: hidden;

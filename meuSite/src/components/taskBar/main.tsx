@@ -101,7 +101,9 @@ export function TaskBar() {
               onClick={() => alternarPelaTaskbar(janela.id)}
             >
               <img
-                className={styles.taskIcon}
+                className={`${styles.taskIcon} ${
+                  janela.id === "bin" ? styles.binTaskIcon : ""
+                }`}
                 src={
                   janela.id === "bin"
                     ? "/windows-xp-icons/Bin.png"
