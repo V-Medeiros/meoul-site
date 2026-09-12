@@ -86,10 +86,17 @@ export const portfolio = {
     links:
     [
       {
-        rotulo: "send",
+        titulo: "Email",
+        acao: "Send email",
         url: "mailto:victorme2806@gmail.com",
-        email: "victorme2806@gmail.com",
-      }
+        valor: "victorme2806@gmail.com",
+      },
+      {
+        titulo: "Phone",
+        acao: "Send message",
+        url: "https://wa.me/5541992899977",
+        valor: "(41) 99289-9977",
+      },
     ]
   },
 

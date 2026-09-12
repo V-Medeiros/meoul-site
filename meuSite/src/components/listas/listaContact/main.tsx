@@ -5,9 +5,10 @@ type Contact = {
 };
 
 type LinkContact = {
-  rotulo: string;
+  titulo: string;
+  acao: string;
   url: string;
-  email: string;
+  valor: string;
 };
 
 type ListaContactProps = {
@@ -18,26 +19,25 @@ type ListaContactProps = {
 
 export function ListaContact({ contact }: ListaContactProps) {
   return (
-    <>
-      <nav className={styles.links}>
-        {contact.links.map((link) => {
-          const externo = !link.url.startsWith("mailto:");
+    <address className={styles.contactList}>
+      {contact.links.map((link) => {
+        const externo = link.url.startsWith("http");
 
-          return (
-            <div className={styles.contact}>
-              <p>{link.email}</p>
-              <a
-                key={link.url}
-                href={link.url}
-                target={externo ? "_blank" : undefined}
-                rel={externo ? "noreferrer" : undefined}
-              >
-                {link.rotulo}
-              </a>
-            </div>
-          );
-        })}
-      </nav>
-    </>
+        return (
+          <section className={styles.contactCard} key={link.url}>
+            <h2>{link.titulo}</h2>
+            <p>{link.valor}</p>
+            <a
+              href={link.url}
+              target={externo ? "_blank" : undefined}
+              rel={externo ? "noreferrer" : undefined}
+              aria-label={`${link.acao}: ${link.valor}`}
+            >
+              {link.acao}
+            </a>
+          </section>
+        );
+      })}
+    </address>
   );
 }
