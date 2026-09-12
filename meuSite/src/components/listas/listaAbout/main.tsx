@@ -48,18 +48,20 @@ export function ListaAbout({ about }: ListaAboutProps) {
           <li>work with databases and embedded systems, and</li>
           <li>enjoy turning ideas into real projects.</li>
         </ul>
-        <p className={styles.summary}>{about.resumo}</p>
+        <div className={styles.details}>
+          <p className={styles.summary}>{about.resumo}</p>
 
-        <dl className={styles.quickFacts}>
-          <div>
-            <dt>Name</dt>
-            <dd>{about.nome}</dd>
-          </div>
-          <div>
-            <dt>Role</dt>
-            <dd>{about.titulo}</dd>
-          </div>
-        </dl>
+          <dl className={styles.quickFacts}>
+            <div>
+              <dt>Name</dt>
+              <dd>{about.nome}</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>{about.titulo}</dd>
+            </div>
+          </dl>
+        </div>
 
         <nav className={styles.links}>
           {about.links.map((link) => {
