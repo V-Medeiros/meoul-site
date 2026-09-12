@@ -66,7 +66,7 @@ export const textosPt: Record<ChaveTexto, string> = {
   contact: "Contato",
   tools: "Tecnologias",
   resume: "Currículo",
-  curriculum: "Currículo",
+  curriculum: "Baixar currículo",
   bin: "Lixeira",
   empty: "Vazia",
   start: "Iniciar",
