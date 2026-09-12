@@ -30,12 +30,12 @@ const janelasIniciais: Stage[] = [
   },
   {
     id: "resume",
-    nome: "Curriculo",
+    nome: "Resumo",
     estado: "fechada",
   },
   {
     id: "curriculum",
-    nome: "Baixar currículo",
+    nome: "Currículo",
     estado: "fechada",
   },
   {
