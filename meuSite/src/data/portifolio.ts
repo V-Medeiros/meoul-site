@@ -32,7 +32,7 @@ export const portfolio = {
       },
       {
         rotulo: "Linkedin",
-        url: "mailto:victorme2806@gmail.com",
+        url: "https://www.linkedin.com/in/victor-oliveira-medeiros-9a027a408/",
       },
     ],
   },
