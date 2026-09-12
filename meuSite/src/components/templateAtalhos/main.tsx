@@ -58,8 +58,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="resume"
         nome={traduzir("resume")}
-        top={228}
-        left={632}
+        top={44}
+        left={507}
         width="clamp(22rem, 60vw, 46.25rem)"
         height="clamp(20rem, 55dvh, 27.5rem)"
         descricao={<ListaResume resume={resumeTraduzido} />}
@@ -67,8 +67,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="about"
         nome={traduzir("about")}
-        top={65}
-        left={1349}
+        top={50}
+        left={1259}
         width="clamp(22rem, 55vw, 41.25rem)"
         height="clamp(20rem, 60dvh, 30rem)"
         descricao={<ListaAbout about={portfolio.about} />}
@@ -76,8 +76,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="projects"
         nome={traduzir("projects")}
-        top={45}
-        left={143}
+        top={28}
+        left={84}
         width="clamp(20rem, 35vw, 26rem)"
         height="clamp(22rem, 60dvh, 38.5rem)"
         descricao={<ListaProjetos projetos={portfolio.projects} />}
@@ -85,8 +85,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="contact"
         nome={traduzir("contact")}
-        top={638}
-        left={48}
+        top={616}
+        left={41}
         width="clamp(20rem, 35vw, 26.25rem)"
         height="clamp(16rem, 35dvh, 17.5rem)"
         descricao={<ListaContact contact={portfolio.contact} />} 
@@ -94,8 +94,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="tools"
         nome={traduzir("tools")}
-        top={568}
-        left={1461}
+        top={505}
+        left={664}
         width="clamp(20rem, 40vw, 30rem)"
         height="clamp(18rem, 45dvh, 23.4375rem)"
         descricao={<ListaTools tools={portfolio.tools} />}
@@ -104,8 +104,8 @@ export function TemplateAtalhos() {
       <Atalho
         id="curriculum"
         nome={traduzir("curriculum")}
-        top={180}
-        left={1461}
+        top={611}
+        left={1463}
         width="clamp(18rem, 32vw, 24rem)"
         height="clamp(12rem, 28dvh, 16rem)"
         descricao={<ListaCurriculo />}
