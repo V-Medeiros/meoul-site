@@ -10,8 +10,8 @@
 }
 
 :root {
-  font-family: "Courier New", Courier, monospace;
-  color: #122747;
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+  color: #000;
   background: #008383;
   font-synthesis: none;
   text-rendering: geometricPrecision;
@@ -19,7 +19,7 @@
   --blue: #1d5fa7;
   --sky: #a9d9df;
   --paper: #f7f2df;
-  --chrome: #d8d6ce;
+  --chrome: #c0c0c0;
   --ink: #122747;
   --green: #739f5a;
 }

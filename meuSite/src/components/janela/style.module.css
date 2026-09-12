@@ -6,20 +6,19 @@
   overflow: hidden;
 
   background: var(--chrome);
-  border: 2px solid #111f2e;
-  border-radius: 2%;
-   box-shadow:
-    inset 2px 2px 0 #fff,
-    inset -2px -2px 0 #777b7b,
-    8px 8px 0 rgba(20, 47, 65, 0.28);
+  border: 2px solid;
+  border-color: #dfdfdf #000 #000 #dfdfdf;
+  border-radius: 0;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #808080;
   z-index: 1000;
 
 
-  animation: windowOpen 180ms ease-out;
 }
 
 .maximized {
-  inset: 0 0 6% 0 !important;
+  inset: 0 0 30px 0 !important;
   width: auto !important;
   height: auto !important;
   border-radius: 0;
@@ -27,12 +26,12 @@
 
 .titleBar {
   display: flex;
-  min-height: 34px;
-  margin: 3px;
-  padding: 3px 4px 3px 8px;
+  min-height: 20px;
+  margin: 2px 2px 0;
+  padding: 2px 2px 2px 4px;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 6px;
   color: white;
   background: #000080;
   cursor: grab;
@@ -46,7 +45,8 @@
 
 .title {
   overflow: hidden;
-  font-size: 13px;
+  font-size: 12px;
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -54,26 +54,22 @@
 .windowControls {
   display: flex;
   flex: 0 0 auto;
-  gap: 3px;
+  gap: 2px;
 }
 
 .controlButton {
   position: relative;
   display: grid;
-  width: 25px;
-  height: 24px;
+  width: 17px;
+  height: 16px;
   padding: 0;
   place-items: center;
   color: #182636;
   background: #deddd6;
   border: 2px solid;
-  border-color: #fff #5f6568 #5f6568 #fff;
+  border-color: #fff #000 #000 #fff;
   border-radius: 0;
   cursor: default;
-}
-
-.controlButton:hover {
-  background: #eeeeea;
 }
 
 .controlButton:active {
@@ -88,56 +84,45 @@
   z-index: 1;
 }
 
-.closeButton:hover {
-  color: #fff;
-  background: #c42b1c;
-  border-color: #e99b92 #70170d #70170d #e99b92;
-}
-
-.closeButton:active {
-  background: #9f2014;
-  border-color: #70170d #e99b92 #e99b92 #70170d;
-}
-
 .minimizeIcon {
-  width: 11px;
+  width: 7px;
   height: 2px;
-  margin-top: 8px;
+  margin-top: 6px;
   background: currentColor;
 }
 
 .maximizeIcon {
-  width: 11px;
-  height: 10px;
-  border: 2px solid currentColor;
-  border-top-width: 3px;
+  width: 9px;
+  height: 8px;
+  border: 1px solid currentColor;
+  border-top-width: 2px;
 }
 
 .restoreIcon {
   position: relative;
-  width: 10px;
-  height: 9px;
-  margin: 3px 0 0 3px;
-  border: 2px solid currentColor;
-  border-top-width: 3px;
+  width: 8px;
+  height: 7px;
+  margin: 2px 0 0 2px;
+  border: 1px solid currentColor;
+  border-top-width: 2px;
 }
 
 .restoreIcon::before {
   position: absolute;
   right: 1px;
   bottom: 1px;
-  width: 8px;
-  height: 7px;
-  border: 2px solid currentColor;
+  width: 7px;
+  height: 6px;
+  border: 1px solid currentColor;
   border-bottom: 0;
   border-left: 0;
   content: "";
-  transform: translate(-3px, -3px);
+  transform: translate(-2px, -2px);
 }
 
 .closeIcon,
 .closeIcon::after {
-  width: 13px;
+  width: 10px;
   height: 2px;
   background: currentColor;
   transform: rotate(45deg);
@@ -153,7 +138,11 @@
   display: flex;
   flex: 1;
   min-height: 0;
-  padding: 1rem;
+  margin: 2px;
+  padding: 8px;
+  background: #fff;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
@@ -166,17 +155,4 @@
 
 .windowFooter {
   flex-shrink: 0;
-}
-
-
-@keyframes windowOpen {
-  from {
-    opacity: 0;
-    transform: translateY(2rem) translateX(-2rem) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }

@@ -2,10 +2,9 @@
   display: grid;
   min-height: 100%;
   overflow: hidden;
-  color: var(--ink);
-  background: var(--paper);
-  border: 2px solid;
-  border-color: #777b7b #fff #fff #777b7b;
+  color: #000;
+  background: #c0c0c0;
+  border: 0;
   grid-template-columns: 220px minmax(0, 1fr);
 }
 
@@ -15,9 +14,9 @@
   padding: 20px 10px 2px;
   align-items: center;
   flex-direction: column;
-  color: #fff;
-  background: #2362a2;
-  border-right: 4px solid #153f70;
+  color: #000;
+  background: #c0c0c0;
+  border-right: 2px groove #fff;
   text-align: center;
   height: 100%;
 }
@@ -27,10 +26,11 @@
   height: 158px;
   margin: 24px 0 14px;
   overflow: hidden;
-  background: #eef3ed;
-  border: 4px solid #143a62;
-  box-shadow: 5px 5px 0 #143a62;
-  border-radius: 5%;
+  background: #fff;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .avatar {
@@ -63,7 +63,7 @@
 .profileStatus {
   width: 100%;
   padding-top: 13px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.45);
+  border-top: 2px groove #fff;
   font-size: 12px;
   margin-top: 1.2rem;
 }
@@ -73,8 +73,8 @@
   width: 8px;
   height: 8px;
   margin-right: 5px;
-  background: #6fee64;
-  border: 1px solid #163954;
+  background: #00a000;
+  border: 1px solid #000;
 }
 
 .focusInfo {
@@ -83,12 +83,12 @@
   margin-top: 30px;
   padding-top: 14px;
   gap: 5px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.45);
+  border-top: 2px groove #fff;
   text-align: left;
 }
 
 .focusInfo span {
-  color: #9fe997;
+  color: #000080;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -103,12 +103,15 @@
 
 
 .aboutCopy {
-  padding: 30px 32px;
+  padding: 22px 24px;
+  background: #fff;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
 }
 
 .eyebrow {
   margin: 0 0 10px;
-  color: #3270a0;
+  color: #000080;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.5px;
@@ -116,9 +119,9 @@
 
 .aboutCopy h1 {
   margin: 0 0 18px;
-  color: #173c6c;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 27px;
+  color: #000;
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+  font-size: 20px;
   line-height: 1.08;
 }
 
@@ -142,7 +145,7 @@
 }
 
 .bioList li::marker {
-  color: #2362a2;
+  color: #000;
 }
 
 .quickFacts {
@@ -154,7 +157,7 @@
 .quickFacts div {
   display: grid;
   padding-bottom: 7px;
-  border-bottom: 1px dashed #9aa9a8;
+  border-bottom: 1px dotted #808080;
   font-size: 1rem;
   grid-template-columns: 76px 1fr;
   margin-top: 1rem;
@@ -178,18 +181,18 @@
 
 .links a {
   padding: 7px 10px;
-  color: #fff;
-  background: var(--blue);
+  color: #000;
+  background: #c0c0c0;
   border: 2px solid;
-  border-color: #8fc5e0 #123b63 #123b63 #8fc5e0;
+  border-color: #fff #000 #000 #fff;
   font-size: 13px;
   font-weight: 800;
   text-decoration: none;
-  box-shadow: 2px 2px 0 #78817c;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
 }
 
 .links a:active {
-  border-color: #123b63 #8fc5e0 #8fc5e0 #123b63;
+  border-color: #000 #fff #fff #000;
   box-shadow: none;
   transform: translate(1px, 1px);
 }

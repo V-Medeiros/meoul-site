@@ -48,7 +48,10 @@ export function TaskBar() {
     <nav className={styles.taskbar} data-taskbar>
       <div className={styles.startMenuArea} ref={menuRef}>
         {menuAberto && (
-          <section className={styles.startMenu} id="start-menu" aria-label="Hey menu">
+          <section className={styles.startMenu} id="start-menu" aria-label="Start menu">
+            <div className={styles.startMenuRail} aria-hidden="true">
+              <strong>my.portifolio</strong>
+            </div>
             <div className={styles.startMenuItems}>
               {janelas.map((janela) => (
                 <button
@@ -80,7 +83,8 @@ export function TaskBar() {
           aria-expanded={menuAberto}
           aria-controls="start-menu"
         >
-          <span>Hey</span>
+          <span className={styles.windowsLogo} aria-hidden="true" />
+          <span>Start</span>
         </button>
       </div>
 

@@ -1,7 +1,7 @@
 .icon {
   height: 3rem;
   width: 3rem;
-  margin: 2rem;
+  margin: 8px 18px 4px;
   border-color: transparent;
   background-color: transparent;
   background-size: contain;
@@ -13,7 +13,7 @@
 .circleIcon {
   height: 3rem;
   width: 3rem;
-  margin: 2rem;
+  margin: 8px 18px 4px;
   border-color: transparent;
   background-color: transparent;
   background-size: contain;
@@ -23,11 +23,30 @@
 
 .atalho {
   text-align: center;
-  width: fit-content;
+  width: 84px;
+  margin: 10px 0;
 }
 
 .atalho > p {
-  color: wheat;
-  font-size: clamp(0.6875rem, 1.5vw, 0.875rem);
-  margin: -1rem;
+  display: inline-block;
+  max-width: 80px;
+  margin: 0;
+  padding: 1px 2px;
+  color: #fff;
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  text-shadow: 1px 1px #000;
+}
+
+.atalho:focus-within > p {
+  background: #000080;
+  outline: 1px dotted #fff;
+  outline-offset: -2px;
+}
+
+.icon:focus-visible,
+.circleIcon:focus-visible {
+  outline: 1px dotted #fff;
+  outline-offset: 2px;
 }
