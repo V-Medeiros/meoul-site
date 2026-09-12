@@ -16,7 +16,7 @@
   flex-direction: column;
   color: #fff;
   background: var(--navy);
-  border-right: 4px solid #2f6da6;
+  border: 0;
   text-align: center;
   height: 100%;
 }
@@ -209,8 +209,7 @@
 
   .profileCard {
     min-height: 290px;
-    border-right: 0;
-    border-bottom: 4px solid #153f70;
+    border: 0;
   }
 
   .aboutCopy {
